@@ -31,7 +31,8 @@ public class InfoController {
     @ResponseBody
     public Continent getContinentsLocations(Model model, @PathVariable String continentName){
         model.addAttribute("continent", continentStorage.getContinentByName(continentName));
-        return continentStorage.getContinentByName(continentName);
+        Continent continent = continentStorage.getContinentByName(continentName);
+        return continent;
     }
 
     @GetMapping(value = "info/{continentName}/{locationName}")

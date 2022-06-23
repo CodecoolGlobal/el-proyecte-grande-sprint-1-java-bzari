@@ -8,4 +8,7 @@ public class World {
 
 	private List<Continent> continents;
 
+	public World(List<Continent> continents) {
+		this.continents = continents;
+	}
 }

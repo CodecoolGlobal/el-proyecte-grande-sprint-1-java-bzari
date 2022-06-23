@@ -6,10 +6,8 @@
     <title>Title</title>
 </head>
 <body>
-<div th:each = "continent : ${continents}">
-    <a href="/info/AustraliaAndOceania" th:text="${continent.getName()}"></a>
-
-
+<div th:each = "wl : ${wildlife}">
+    <a th:text="${wl.getName()}"></a>
 </div>
 </body>
 </html>

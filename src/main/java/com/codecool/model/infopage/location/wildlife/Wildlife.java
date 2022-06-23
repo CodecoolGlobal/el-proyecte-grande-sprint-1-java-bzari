@@ -1,7 +1,11 @@
 package com.codecool.model.infopage.location.wildlife;
 
+import java.util.UUID;
+
 public class Wildlife {
 
+	private int id;
+	private int locationId;
 	private String name;
 	private String description;
 	private double lifetime;
@@ -10,7 +14,11 @@ public class Wildlife {
 	private String crisis;
 	private WildlifeType type;
 
-	public Wildlife(String name, String description, double lifetime, String lifetimeInterval, ConservationStatus status, String crisis, WildlifeType type) {
+	public Wildlife(int id, int locationId, String name, String description, double lifetime,
+					String lifetimeInterval, ConservationStatus status,
+					String crisis, WildlifeType type) {
+		this.id = id;
+		this.locationId = locationId;
 		this.name = name;
 		this.description = description;
 		this.lifetime = lifetime;
@@ -18,5 +26,13 @@ public class Wildlife {
 		this.status = status;
 		this.crisis = crisis;
 		this.type = type;
+	}
+
+	public int getLocationId() {
+		return locationId;
+	}
+
+	public String getName() {
+		return name;
 	}
 }

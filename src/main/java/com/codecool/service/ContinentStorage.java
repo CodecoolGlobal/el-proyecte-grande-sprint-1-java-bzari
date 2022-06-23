@@ -24,7 +24,7 @@ public class ContinentStorage {
 
     public Continent getContinentByName(String continentName){
         for (Continent continent : allContinents) {
-            if (continent.getName() == continentName){
+            if (continent.getName().equals(continentName)){
                 return continent;
             }
         }

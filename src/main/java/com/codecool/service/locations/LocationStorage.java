@@ -25,7 +25,7 @@ public class LocationStorage {
 
     public Location getLocationByName(String name) {
         for (Location location : allLocations) {
-            if (location.getName() == name){
+            if (location.getName().equals(name)){
                 return location;
             }
         }

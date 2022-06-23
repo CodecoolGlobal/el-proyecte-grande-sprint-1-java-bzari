@@ -1,6 +1,7 @@
 package com.codecool.model.infopage;
 
 import com.codecool.model.infopage.location.Location;
+import com.codecool.service.locations.LocationStorage;
 
 import java.util.List;
 
@@ -8,9 +9,9 @@ public class Continent {
 
 	private int id;
 	private String name;
-	private List<Location> locations;
+	private LocationStorage locations;
 
-	public Continent(int id, String name, List<Location> locations) {
+	public Continent(int id, String name, LocationStorage locations) {
 		this.id = id;
 		this.name = name;
 		this.locations = locations;
@@ -24,7 +25,8 @@ public class Continent {
 		return name;
 	}
 
-	public Location getLocationById(int id){
-		return locations.get(0);
+	public LocationStorage getLocations() {
+		return locations;
 	}
 }
+

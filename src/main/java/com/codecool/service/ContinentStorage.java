@@ -22,9 +22,9 @@ public class ContinentStorage {
         return allContinents;
     }
 
-    public Continent getContinentById(int id){
+    public Continent getContinentByName(String continentName){
         for (Continent continent : allContinents) {
-            if (continent.getId() == id){
+            if (continent.getName() == continentName){
                 return continent;
             }
         }

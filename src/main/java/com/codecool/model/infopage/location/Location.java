@@ -35,4 +35,32 @@ public class Location {
 	public List<Wildlife> getWildlife() {
 		return wildlife;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public int getContinentId() {
+		return continentId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getVideo() {
+		return video;
+	}
+
+	public String getSound() {
+		return sound;
+	}
+
+	public String getClimate() {
+		return climate;
+	}
+
+	public String getCrisis() {
+		return crisis;
+	}
 }

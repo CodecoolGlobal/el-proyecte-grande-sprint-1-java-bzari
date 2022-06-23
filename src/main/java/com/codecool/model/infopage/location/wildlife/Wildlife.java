@@ -35,4 +35,32 @@ public class Wildlife {
 	public String getName() {
 		return name;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public double getLifetime() {
+		return lifetime;
+	}
+
+	public String getLifetimeInterval() {
+		return lifetimeInterval;
+	}
+
+	public ConservationStatus getStatus() {
+		return status;
+	}
+
+	public String getCrisis() {
+		return crisis;
+	}
+
+	public WildlifeType getType() {
+		return type;
+	}
 }

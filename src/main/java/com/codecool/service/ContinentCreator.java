@@ -14,6 +14,6 @@ public class ContinentCreator {
 
 
     public Continent createContinent(){
-        return new Continent(1, "Australia and Oceania", locationStorage.getAllLocations());
+        return new Continent(1, "Australia and Oceania", locationStorage);
     }
 }

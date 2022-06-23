@@ -1,5 +1,6 @@
 package com.codecool.service.locations;
 
+import com.codecool.model.infopage.Continent;
 import com.codecool.model.infopage.location.Location;
 
 import java.util.ArrayList;
@@ -20,5 +21,14 @@ public class LocationStorage {
 
     public List<Location> getAllLocations() {
         return allLocations;
+    }
+
+    public Location getLocationByName(String name) {
+        for (Location location : allLocations) {
+            if (location.getName() == name){
+                return location;
+            }
+        }
+        return null;
     }
 }

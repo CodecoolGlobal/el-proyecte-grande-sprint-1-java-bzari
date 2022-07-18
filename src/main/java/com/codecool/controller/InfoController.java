@@ -4,6 +4,8 @@ import com.codecool.model.infopage.Continent;
 import com.codecool.model.infopage.location.Location;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
 import com.codecool.service.ContinentStorage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +15,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
+@Component
 @Controller
 @RequestMapping("/")
 public class InfoController {
-    private static final ContinentStorage continentStorage = new ContinentStorage();
+
+    @Autowired
+    private ContinentStorage continentStorage;
 
 
     @GetMapping(value = "api/info")

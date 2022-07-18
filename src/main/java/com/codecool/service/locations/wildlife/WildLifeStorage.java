@@ -1,17 +1,21 @@
 package com.codecool.service.locations.wildlife;
 
-import com.codecool.model.infopage.location.Location;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class WildLifeStorage {
     private List<Wildlife> allWildlife;
-    private static final WildLifeCreator wildlifeCreator = new WildLifeCreator();
+    private WildLifeCreator wildlifeCreator;
 
-    public WildLifeStorage() {
+    @Autowired
+    public WildLifeStorage(WildLifeCreator wildLifeCreator) {
         allWildlife = new ArrayList<>();
+        this.wildlifeCreator = wildLifeCreator;
         addWildlife(wildlifeCreator.createWildlife());
     }
 

@@ -1,16 +1,21 @@
 package com.codecool.service;
 
 import com.codecool.model.infopage.Continent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ContinentStorage {
     private List<Continent> allContinents;
-    private static final ContinentCreator continentCreator = new ContinentCreator();
+    private ContinentCreator continentCreator;
 
-    public ContinentStorage() {
+    @Autowired
+    public ContinentStorage(ContinentCreator continentCreator) {
         allContinents = new ArrayList<>();
+        this.continentCreator = continentCreator;
         addContinent(continentCreator.createContinent());
     }
 

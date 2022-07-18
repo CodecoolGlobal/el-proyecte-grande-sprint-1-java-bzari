@@ -3,12 +3,19 @@ package com.codecool.service.locations;
 import com.codecool.model.infopage.location.Location;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
 import com.codecool.service.locations.wildlife.WildLifeStorage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class LocationCreator {
-    private static final WildLifeStorage wildLifeStorage = new WildLifeStorage();
+    private WildLifeStorage wildLifeStorage;
     private List<Wildlife> wildlife;
+
+    public LocationCreator(WildLifeStorage wildLifeStorage) {
+        this.wildLifeStorage = wildLifeStorage;
+    }
 
     public Location createLocation(){
         getAllWildlife();

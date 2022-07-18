@@ -2,16 +2,21 @@ package com.codecool.service.locations;
 
 import com.codecool.model.infopage.Continent;
 import com.codecool.model.infopage.location.Location;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class LocationStorage {
     private List<Location> allLocations;
-    private static final LocationCreator locationCreator = new LocationCreator();
+    @Autowired
+    private LocationCreator locationCreator;
 
-    public LocationStorage() {
+    public LocationStorage(LocationCreator locationCreator) {
         allLocations = new ArrayList<>();
+        this.locationCreator = locationCreator;
         addLocation(locationCreator.createLocation());
     }
 

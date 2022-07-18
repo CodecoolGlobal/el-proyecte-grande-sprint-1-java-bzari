@@ -9,9 +9,9 @@ public class Continent {
 
 	private int id;
 	private String name;
-	private LocationStorage locations;
+	private List<Location> locations;
 
-	public Continent(int id, String name, LocationStorage locations) {
+	public Continent(int id, String name, List<Location> locations) {
 		this.id = id;
 		this.name = name;
 		this.locations = locations;
@@ -25,7 +25,7 @@ public class Continent {
 		return name;
 	}
 
-	public LocationStorage getLocations() {
+	public List<Location> getLocations() {
 		return locations;
 	}
 }

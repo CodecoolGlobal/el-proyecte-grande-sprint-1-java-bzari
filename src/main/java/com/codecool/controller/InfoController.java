@@ -27,7 +27,7 @@ public class InfoController {
 
     }
 
-    @GetMapping(value = "info/{continentName}")
+    @GetMapping(value = "api/info/{continentName}")
     @ResponseBody
     public Continent getContinentsLocations(Model model, @PathVariable String continentName){
         model.addAttribute("continent", continentStorage.getContinentByName(continentName));
@@ -35,7 +35,7 @@ public class InfoController {
         return continent;
     }
 
-    @GetMapping(value = "info/{continentName}/{locationName}")
+    @GetMapping(value = "api/info/{continentName}/{locationName}")
     @ResponseBody
     public Location getLocationInfo(Model model, @PathVariable String continentName, @PathVariable String locationName){
         model.addAttribute("location", continentStorage.getContinentByName(continentName).getLocations().getLocationByName(locationName));

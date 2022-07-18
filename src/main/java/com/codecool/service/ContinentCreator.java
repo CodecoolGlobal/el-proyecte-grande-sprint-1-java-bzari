@@ -10,11 +10,14 @@ import java.util.List;
 
 @Component
 public class ContinentCreator {
+    private List<Location> locations;
 
     @Autowired
     private LocationStorage locationStorage;
 
+
     public Continent createContinent(){
-        return new Continent(1, "Australia_and_Oceania", locationStorage);
+        return new Continent(1, "Australia_and_Oceania", locations);
+
     }
 }

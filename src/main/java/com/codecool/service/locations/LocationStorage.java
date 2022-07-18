@@ -11,9 +11,9 @@ import java.util.List;
 @Component
 public class LocationStorage {
     private List<Location> allLocations;
-    @Autowired
     private LocationCreator locationCreator;
 
+    @Autowired
     public LocationStorage(LocationCreator locationCreator) {
         allLocations = new ArrayList<>();
         this.locationCreator = locationCreator;

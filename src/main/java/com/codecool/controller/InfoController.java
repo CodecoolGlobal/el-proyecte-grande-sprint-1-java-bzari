@@ -17,14 +17,14 @@ import java.util.List;
 
 @Component
 @Controller
-@RequestMapping("/")
+@RequestMapping("/api")
 public class InfoController {
 
     @Autowired
     private ContinentStorage continentStorage;
 
 
-    @GetMapping(value = "api/allContinents")
+    @GetMapping(value = "/allContinents")
     @ResponseBody
     public List<Continent> getContinentsName(Model model){
         model.addAttribute("continents", continentStorage.getAllContinents());
@@ -32,7 +32,7 @@ public class InfoController {
 
     }
 
-    @GetMapping(value = "api/{continentName}")
+    @GetMapping(value = "/{continentName}")
     @ResponseBody
     public Continent getContinentsLocations(Model model, @PathVariable String continentName){
         model.addAttribute("continent", continentStorage.getContinentByName(continentName));

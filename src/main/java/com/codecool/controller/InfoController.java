@@ -40,6 +40,11 @@ public class InfoController {
         return continent;
     }
 
+    @GetMapping(value="/")
+    public String index(){
+        return "index";
+    }
+
     //TODO: Refactor broken method calls.
 //    @GetMapping(value = "api/{continentName}/{locationName}")
 //    @ResponseBody

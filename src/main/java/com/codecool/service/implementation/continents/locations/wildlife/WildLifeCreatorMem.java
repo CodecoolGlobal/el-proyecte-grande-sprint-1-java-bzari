@@ -1,13 +1,14 @@
-package com.codecool.service.locations.wildlife;
+package com.codecool.service.implementation.continents.locations.wildlife;
 
 import com.codecool.model.infopage.location.wildlife.ConservationStatus;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
 import com.codecool.model.infopage.location.wildlife.WildlifeType;
+import com.codecool.service.dao.WildLifeCreatorDao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WildLifeCreator {
+public class WildLifeCreatorMem implements WildLifeCreatorDao {
     private int id;
     private int locationId;
     private String name;
@@ -18,7 +19,7 @@ public class WildLifeCreator {
     private String crisis;
     private WildlifeType type;
 
-    public WildLifeCreator() {
+    public WildLifeCreatorMem() {
 
     }
 
@@ -33,6 +34,7 @@ public class WildLifeCreator {
         return new Wildlife(id, locationId, name, description, lifetime, lifetimeInterval, conservationStatus, crisis, wildlifeType);
     }
 
+    @Override
     public List<Wildlife> createAllWildlife(){
         List<Wildlife> allWildlife = new ArrayList<>();
         allWildlife.add(createWildlife(

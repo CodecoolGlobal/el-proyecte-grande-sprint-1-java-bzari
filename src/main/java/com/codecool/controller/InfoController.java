@@ -1,9 +1,7 @@
 package com.codecool.controller;
 
 import com.codecool.model.infopage.Continent;
-import com.codecool.model.infopage.location.Location;
-import com.codecool.model.infopage.location.wildlife.Wildlife;
-import com.codecool.service.ContinentStorage;
+import com.codecool.service.implementation.continents.ContinentStorageMem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -21,7 +19,7 @@ import java.util.List;
 public class InfoController {
 
     @Autowired
-    private ContinentStorage continentStorage;
+    private ContinentStorageMem continentStorage;
 
 
     @GetMapping(value = "api/allContinents")

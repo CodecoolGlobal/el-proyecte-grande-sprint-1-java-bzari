@@ -1,7 +1,6 @@
 package com.codecool.model.infopage;
 
 import com.codecool.model.infopage.location.Location;
-import com.codecool.service.locations.LocationStorage;
 
 import java.util.List;
 

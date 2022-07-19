@@ -40,12 +40,13 @@ public class InfoController {
         return continent;
     }
 
-    @GetMapping(value = "api/{continentName}/{locationName}")
-    @ResponseBody
-    public Location getLocationInfo(Model model, @PathVariable String continentName, @PathVariable String locationName){
-        model.addAttribute("location", continentStorage.getContinentByName(continentName).getLocations().getLocationByName(locationName));
-
-        return continentStorage.getContinentByName(continentName).getLocations().getLocationByName(locationName);
-    }
+    //TODO: Refactor broken method calls.
+//    @GetMapping(value = "api/{continentName}/{locationName}")
+//    @ResponseBody
+//    public Location getLocationInfo(Model model, @PathVariable String continentName, @PathVariable String locationName){
+//        model.addAttribute("location", continentStorage.getContinentByName(continentName).getLocations().getLocationByName(locationName));
+//
+//        return continentStorage.getContinentByName(continentName).getLocations().getLocationByName(locationName);
+//    }
 
 }

@@ -16,7 +16,12 @@ public class ContinentStorage {
     public ContinentStorage(ContinentCreator continentCreator) {
         allContinents = new ArrayList<>();
         this.continentCreator = continentCreator;
-        addContinent(continentCreator.createContinent());
+//        addContinent(continentCreator.createAllContinent());
+        setContinent(continentCreator.createAllContinent());
+    }
+
+    private void setContinent(List<Continent> allContinent) {
+        this.allContinents = allContinent;
     }
 
     public void addContinent(Continent continent){

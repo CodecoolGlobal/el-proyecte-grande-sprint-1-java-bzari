@@ -16,7 +16,12 @@ public class WildLifeStorage {
     public WildLifeStorage(WildLifeCreator wildLifeCreator) {
         allWildlife = new ArrayList<>();
         this.wildlifeCreator = wildLifeCreator;
-        addWildlife(wildlifeCreator.createWildlife());
+//        addWildlife(wildlifeCreator.createWildlife());
+        setAllWildLife(wildLifeCreator.createAllWildlife());
+    }
+
+    private void setAllWildLife(List<Wildlife> allWildlife) {
+        this.allWildlife = allWildlife;
     }
 
     public void addWildlife(Wildlife wildlife){

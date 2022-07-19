@@ -17,7 +17,12 @@ public class LocationStorage {
     public LocationStorage(LocationCreator locationCreator) {
         allLocations = new ArrayList<>();
         this.locationCreator = locationCreator;
-        addLocation(locationCreator.createLocation());
+//        addLocation(locationCreator.createLocation());
+        setAllLocations(locationCreator.createAllLocations());
+    }
+
+    private void setAllLocations(List<Location> allLocations) {
+        this.allLocations = allLocations;
     }
 
     public void addLocation(Location location){
@@ -35,5 +40,15 @@ public class LocationStorage {
             }
         }
         return null;
+    }
+
+    public List<Location> getLocationsByContinentId(int continentId){
+        List<Location> result = new ArrayList<>();
+        for(Location location: allLocations){
+            if(location.getContinentId() == continentId){
+                result.add(location);
+            }
+        }
+        return result;
     }
 }

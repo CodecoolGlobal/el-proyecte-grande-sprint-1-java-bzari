@@ -25,6 +25,7 @@ public class LocationCreator {
     }
     public List<Location> createAllLocations(){
         List<Location> allLocation = new ArrayList<>();
+        getAllWildlife();
         allLocation.add(new Location(1, 1, "Indo-Pacific", "The Indo-Pacific, sometimes known as the Indo-West Pacific or Indo-Pacific Asia, is a biogeographic region of Earth's seas, comprising the tropical waters of the Indian Ocean, the western and central Pacific Ocean, and the seas connecting the two in the general area of Indonesia.",
                 wildlife, "not available", "not available", "exists", "everything"));
         return allLocation;

@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<!--    <link rel="script" href="/static/script/index.js" defer>-->
+    <script src="/static/script/index.js" defer></script>
 </head>
 <body>
+
 <div th:each = "continent : ${continents}">
-    <a href="/info/AustraliaAndOceania" th:text="${continent.getName()}"></a>
-
-
+    <button th:text="${continent.getName()}" th:id="${continent.getId()}"></button>
 </div>
 </body>
 </html>

@@ -16,10 +16,6 @@ public class ContinentCreatorMem implements ContinentCreatorDao {
     @Autowired
     private LocationStorageMem locationStorage;
 
-//
-//    public Continent createContinent(){
-//        return new Continent(1, "Australia_and_Oceania", locations);
-//    }
     @Override
     public List<Continent> createAllContinent(){
         List<Continent> allContinent = new ArrayList<>();

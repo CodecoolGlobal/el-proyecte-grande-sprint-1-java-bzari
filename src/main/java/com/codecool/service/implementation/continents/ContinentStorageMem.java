@@ -1,20 +1,22 @@
 package com.codecool.service.implementation.continents;
 
 import com.codecool.model.infopage.Continent;
+import com.codecool.service.dao.ContinentCreatorDao;
 import com.codecool.service.dao.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class ContinentStorageMem implements ContinentStorageDao {
     private List<Continent> allContinents;
-    private ContinentCreatorMem continentCreator;
+    private ContinentCreatorDao continentCreator;
 
     @Autowired
-    public ContinentStorageMem(ContinentCreatorMem continentCreator) {
+    public ContinentStorageMem(ContinentCreatorDao continentCreator) {
         allContinents = new ArrayList<>();
         this.continentCreator = continentCreator;
 //        addContinent(continentCreator.createAllContinent());

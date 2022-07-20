@@ -1,5 +1,6 @@
 package com.codecool.service.implementation.continents;
 
+import com.codecool.model.DTO.MapDTO;
 import com.codecool.model.infopage.Continent;
 import com.codecool.service.dao.ContinentCreatorDao;
 import com.codecool.service.dao.ContinentStorageDao;
@@ -44,6 +45,15 @@ public class ContinentStorageMem implements ContinentStorageDao {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<MapDTO> getAllContinentName() {
+        List<MapDTO> allCont = new ArrayList<>();
+        for (Continent continent : allContinents) {
+            allCont.add(new MapDTO(continent.getName(), continent.getId()));
+        }
+        return allCont;
     }
 
 

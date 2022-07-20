@@ -36,9 +36,27 @@ public class Config {
 //    @Bean
 //    public LocationCreatorDao getLocationCreator(){return new LocationCreatorMem(getWildLifeStorage());}
 //
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    @Bean
+//    public WildLifeCreator getWildLifeCreator(){return new WildLifeCreator();}
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    @Bean
+//    public WildLifeStorage getWildLifeStorage(){return new WildLifeStorage(getWildLifeCreator());}
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     @Bean
     public WildLifeCreatorDao getWildLifeCreator(){return new WildLifeCreatorMem();}
+
+
+//    public LocationCreator getLocationCreator(){return new LocationCreator(getWildLifeStorage());}
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    @Bean
+//    public LocationStorage getLocationStorage(){return new LocationStorage(getLocationCreator());}
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    @Bean
+//    public ContinentCreator getContinentCreator(){return new ContinentCreator();}
+//    @Bean
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    public ContinentStorage getContinentStorage(){return new ContinentStorage(getContinentCreator());}
 
 
 

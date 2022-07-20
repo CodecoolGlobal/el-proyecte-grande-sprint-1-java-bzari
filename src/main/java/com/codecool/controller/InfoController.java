@@ -40,6 +40,12 @@ public class InfoController {
         return continent;
     }
 
+    @GetMapping(value = "/{continentName}/locations")
+    @ResponseBody
+    public List<Location> getAllLocationsByContinentName(@PathVariable String continentName){
+        return continentStorage.getContinentByName(continentName).getLocations();
+    }
+
     //TODO: Refactor broken method calls.
 //    @GetMapping(value = "api/{continentName}/{locationName}")
 //    @ResponseBody

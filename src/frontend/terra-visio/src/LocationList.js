@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {ButtonCreator} from "./Button";
 import {Link, useParams} from "react-router-dom";
-import {Test} from "./Test";
+// import {Test} from "./Test";
 
 export function LocationList(props){
     const { name } = useParams();
@@ -13,7 +13,7 @@ export function LocationList(props){
                 headers:{"accept":"application/json"}})
             .then(res => res.json())
             .then(data => setLocationData(data))
-    }, [])
+    })
 
     return (
         <>

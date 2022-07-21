@@ -1,4 +1,4 @@
-package com.codecool.model.forum.topic.comment;
+package com.codecool.model.forum.topic.Post.comment;
 
 import com.codecool.model.user.User;
 

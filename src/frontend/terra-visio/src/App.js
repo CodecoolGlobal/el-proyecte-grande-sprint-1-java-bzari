@@ -5,17 +5,16 @@ import React from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./LocationList";
 import {Test} from "./Test";
-
+import InfoPage from "./InfoPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
           <Routes>
               <Route path="/" element={<ContinentList/>}/>
               <Route path="/:name/locationlist" element={<LocationList/>}/>
-              <Route path="/location/:name" element={<Test/>}/>
+              <Route path="/location/:name" element={<InfoPage/>}/>
           </Routes>
       </header>
     </div>

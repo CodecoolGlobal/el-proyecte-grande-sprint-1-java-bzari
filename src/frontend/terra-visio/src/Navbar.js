@@ -1,21 +1,25 @@
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from './Logo';
 import {List, PersonCircle} from 'react-bootstrap-icons';
+import {Container, Form} from "react-bootstrap";
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 function Header(){
     return (
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" sticky="top">
             <Container>
                 <Navbar.Brand href="/" as={Logo} />
-                    <Nav className="me-auto">
+            </Container>
+            <Navbar.Toggle/>
+            <Navbar.Collapse className="justify-content-end">
+                <Nav className="me-auto">
                         <NavDropdown title={<List />} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">
@@ -36,7 +40,18 @@ function Header(){
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-            </Container>
+                <Form className="d-flex">
+                    <Form.Control
+                        type="search"
+                        placeholder="Search"
+                        className=""
+                        aria-label="Search"
+                    />
+                    {<IconButton>
+                    <SearchIcon/>
+                    </IconButton>}
+                </Form>
+            </Navbar.Collapse>
         </Navbar>
     );
 }

@@ -1,8 +1,10 @@
-package com.codecool.service.locations;
+package com.codecool.service.implementation.continents.locations;
 
 import com.codecool.model.infopage.location.Location;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
-import com.codecool.service.locations.wildlife.WildLifeStorage;
+import com.codecool.service.dao.LocationCreatorDao;
+import com.codecool.service.dao.WildLifeStorageDao;
+import com.codecool.service.implementation.continents.locations.wildlife.WildLifeStorageMem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,19 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class LocationCreator {
-    private WildLifeStorage wildLifeStorage;
+public class LocationCreatorMem implements LocationCreatorDao {
+    private WildLifeStorageDao wildLifeStorage;
     private List<Wildlife> wildlife;
 
-    public LocationCreator(WildLifeStorage wildLifeStorage) {
+    @Autowired
+    public LocationCreatorMem(WildLifeStorageDao wildLifeStorage) {
         this.wildLifeStorage = wildLifeStorage;
     }
 
-    public Location createLocation(){
-        getAllWildlife();
-        return new Location(1, 1, "Indo-Pacific", "The Indo-Pacific, sometimes known as the Indo-West Pacific or Indo-Pacific Asia, is a biogeographic region of Earth's seas, comprising the tropical waters of the Indian Ocean, the western and central Pacific Ocean, and the seas connecting the two in the general area of Indonesia.",
-                wildLifeStorage.getWildlifeByLocationId(1), "not available", "not available", "exists", "everything");
-    }
+//    public Location createLocation(){
+//        getAllWildlife();
+//        return new Location(1, 1, "Indo-Pacific", "The Indo-Pacific, sometimes known as the Indo-West Pacific or Indo-Pacific Asia, is a biogeographic region of Earth's seas, comprising the tropical waters of the Indian Ocean, the western and central Pacific Ocean, and the seas connecting the two in the general area of Indonesia.",
+//                wildLifeStorage.getWildlifeByLocationId(1), "not available", "not available", "exists", "everything");
+//    }
     public List<Location> createAllLocations(){
         List<Location> allLocation = new ArrayList<>();
         getAllWildlife();
@@ -30,6 +33,7 @@ public class LocationCreator {
         //Australia_and_Oceania
         allLocation.add(new Location(1, 1, "Indo-Pacific", "The Indo-Pacific, sometimes known as the Indo-West Pacific or Indo-Pacific Asia, is a biogeographic region of Earth's seas, comprising the tropical waters of the Indian Ocean, the western and central Pacific Ocean, and the seas connecting the two in the general area of Indonesia.",
                 wildLifeStorage.getWildlifeByLocationId(1), "not available", "not available", "exists", "everything"));
+
         allLocation.add(new Location(2, 1, "Tasmania", "Homeland of the Tasmanian devil.", wildLifeStorage.getWildlifeByLocationId(2), "not available", "not available", "exists", "everything"));
         allLocation.add(new Location(3, 1, "Bendigo", "Gotta get me cube", wildLifeStorage.getWildlifeByLocationId(3), "not available", "not available", "exists", "everything"));
 

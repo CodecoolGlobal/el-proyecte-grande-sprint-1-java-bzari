@@ -1,19 +1,23 @@
-package com.codecool.service;
+package com.codecool.service.implementation.continents;
 
+import com.codecool.model.DTO.MapDTO;
 import com.codecool.model.infopage.Continent;
+import com.codecool.service.dao.ContinentCreatorDao;
+import com.codecool.service.dao.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class ContinentStorage {
+@Repository
+public class ContinentStorageMem implements ContinentStorageDao {
     private List<Continent> allContinents;
-    private ContinentCreator continentCreator;
+    private ContinentCreatorDao continentCreator;
 
     @Autowired
-    public ContinentStorage(ContinentCreator continentCreator) {
+    public ContinentStorageMem(ContinentCreatorDao continentCreator) {
         allContinents = new ArrayList<>();
         this.continentCreator = continentCreator;
 //        addContinent(continentCreator.createAllContinent());
@@ -27,11 +31,13 @@ public class ContinentStorage {
     public void addContinent(Continent continent){
         allContinents.add(continent);
     }
-    
+
+    @Override
     public List<Continent> getAllContinents(){
         return allContinents;
     }
 
+    @Override
     public Continent getContinentByName(String continentName){
         for (Continent continent : allContinents) {
             if (continent.getName().equals(continentName)){
@@ -39,6 +45,15 @@ public class ContinentStorage {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<MapDTO> getAllContinentName() {
+        List<MapDTO> allCont = new ArrayList<>();
+        for (Continent continent : allContinents) {
+            allCont.add(new MapDTO(continent.getName(), continent.getId()));
+        }
+        return allCont;
     }
 
 

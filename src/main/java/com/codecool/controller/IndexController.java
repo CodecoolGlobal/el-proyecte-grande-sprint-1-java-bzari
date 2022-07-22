@@ -1,6 +1,6 @@
 package com.codecool.controller;
 
-import com.codecool.service.ContinentStorage;
+import com.codecool.service.dao.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @Autowired
-    private ContinentStorage continentStorage;
+    private ContinentStorageDao continentStorage;
 
     @GetMapping
     public String index(Model model){

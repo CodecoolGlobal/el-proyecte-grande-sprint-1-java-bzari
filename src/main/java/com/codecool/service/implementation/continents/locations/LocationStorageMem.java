@@ -1,20 +1,22 @@
-package com.codecool.service.locations;
+package com.codecool.service.implementation.continents.locations;
 
-import com.codecool.model.infopage.Continent;
 import com.codecool.model.infopage.location.Location;
+import com.codecool.service.dao.LocationCreatorDao;
+import com.codecool.service.dao.LocationStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class LocationStorage {
+@Repository
+public class LocationStorageMem implements LocationStorageDao {
     private List<Location> allLocations;
-    private LocationCreator locationCreator;
+    private LocationCreatorDao locationCreator;
 
     @Autowired
-    public LocationStorage(LocationCreator locationCreator) {
+    public LocationStorageMem(LocationCreatorDao locationCreator) {
         allLocations = new ArrayList<>();
         this.locationCreator = locationCreator;
 //        addLocation(locationCreator.createLocation());
@@ -25,23 +27,13 @@ public class LocationStorage {
         this.allLocations = allLocations;
     }
 
-    public void addLocation(Location location){
-        allLocations.add(location);
-    }
 
+    @Override
     public List<Location> getAllLocations() {
         return allLocations;
     }
 
-    public Location getLocationByName(String name) {
-        for (Location location : allLocations) {
-            if (location.getName().equals(name)){
-                return location;
-            }
-        }
-        return null;
-    }
-
+    @Override
     public List<Location> getLocationsByContinentId(int continentId){
         List<Location> result = new ArrayList<>();
         for(Location location: allLocations){

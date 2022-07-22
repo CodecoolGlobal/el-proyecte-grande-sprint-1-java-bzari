@@ -1,24 +1,18 @@
 import React, {useEffect} from 'react';
 import {ButtonCreator} from "./Button";
 import {Link} from "react-router-dom";
+import useCancallableFetch from './useCancallableFetch.jsx';
 
 export function ContinentList(){
     //useState & useEffect
-    const [continentData, setContinentData] = React.useState([])
-    useEffect( () => {
-        fetch('/api/allContinents',
-            {method:"GET",
-            headers: {"accept":"application/json"}})
-            .then(res => res.json())
-            .then(data => setContinentData(data))
-    }, [])
+    const continentData = useCancallableFetch({url:"/api/allContinents", method: "GET", initialState: []});
 
     return (
         <><div className={"button-collection"} id={"btn-box"}>
-            {continentData.length===0?"No data yet.":continentData.map(data => {
-                    return <Link to={`/${data.name}/locationlist`}><ButtonCreator context={data.name} buttonId={data.id}/></Link>
-                }
-            )}
-        </div></>
+              {continentData.length===0?"No data yet.":continentData.map(data => {
+                  return <Link key={} to={`/${data.name}/locationlist`}><ButtonCreator context={data.name} buttonId={data.id}/></Link>
+              }
+                                                                        )}
+          </div></>
     )
 }

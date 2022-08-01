@@ -1,8 +1,10 @@
 package com.codecool.model.infopage;
 
+import com.codecool.model.DTO.MapDTO;
 import com.codecool.model.infopage.location.Location;
-import com.codecool.service.locations.LocationStorage;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Continent {
@@ -27,6 +29,23 @@ public class Continent {
 
 	public List<Location> getLocations() {
 		return locations;
+	}
+
+	public List<MapDTO> getAllLocationDTO(){
+		List<MapDTO> allLocationDTO = new ArrayList<>();
+		for (Location location : locations) {
+			allLocationDTO.add(new MapDTO(location.getName(), location.getId()));
+		}
+		return allLocationDTO;
+	}
+
+	public Location getLocationByName(String locationName){
+		for (Location location : locations) {
+			if (location.getName().equals(locationName)){
+				return location;
+			}
+		}
+		return null;
 	}
 }
 

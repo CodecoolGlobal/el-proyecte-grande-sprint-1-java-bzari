@@ -3,13 +3,12 @@
       xmlns:th="http://thymeleaf.org/" >
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TerraVisio</title>
+<!--    <link rel="script" href="/static/script/index.js" defer>-->
+    <script src="/static/script/index.js" defer></script>
 </head>
 <body>
-<div th:each = "continent : ${continents}">
-    <a href="/info/AustraliaAndOceania" th:text="${continent.getName()}"></a>
-
-
-</div>
+<h1>HELLO</h1>
+<div th:insert="footer :: footer"></div>
 </body>
 </html>

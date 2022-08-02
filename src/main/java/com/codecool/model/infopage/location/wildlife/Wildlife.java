@@ -12,7 +12,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 public class Wildlife {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int locationId;
 	private String name;

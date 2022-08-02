@@ -5,7 +5,12 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.UUID;
-
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Wildlife {
 
 	private int id;

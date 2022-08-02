@@ -15,7 +15,8 @@ public class Wildlife {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int locationId;
+	@ManyToOne
+	private Location location;
 	private String name;
 	private String description;
 	private double lifetime;

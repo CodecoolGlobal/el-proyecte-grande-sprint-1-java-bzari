@@ -1,5 +1,9 @@
 package com.codecool.model.infopage.location.wildlife;
 
+import com.codecool.model.infopage.location.Location;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.UUID;
 
 public class Wildlife {

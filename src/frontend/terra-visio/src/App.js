@@ -13,7 +13,7 @@ function App() {
       <header className="App-header">
           <Routes>
               <Route path="/" element={<ContinentList/>}/>
-              <Route path="/:name/locationlist" element={<LocationList/>}/>
+              <Route path="/continent/:name" element={<LocationList/>}/>
               <Route path="/location/:name" element={<InfoPage/>}/>
           </Routes>
       </header>

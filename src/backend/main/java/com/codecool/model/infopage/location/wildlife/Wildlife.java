@@ -4,7 +4,7 @@ import com.codecool.model.infopage.location.Location;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.UUID;
+
 @Getter
 @Setter
 @Builder

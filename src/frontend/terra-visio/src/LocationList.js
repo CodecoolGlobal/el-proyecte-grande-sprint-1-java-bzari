@@ -15,11 +15,12 @@ export function LocationList(){
     }, [])
 
     return (
-        <>
+        <><div className={"button-collection"}>
+            <Link to={'/'}><ButtonCreator context={"Rollback"}/></Link>
             {locationData.length===0?"No location-dada accessible":locationData.map(data => {
                 // return <ButtonCreator context={data.name}/>
                 return <Link to={`/location/${data.name}`}><ButtonCreator context={data.name}/></Link>
             })}
-        </>
+        </div></>
     )
 }

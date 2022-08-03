@@ -3,6 +3,7 @@ package com.codecool.model.forum.topic;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.user.Users;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,7 +25,7 @@ public class Topic {
 	private String title;
 	private String description;
 	private LocalDate timestamp;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Users user;
 	@OneToMany(mappedBy = "topic")
 	private Set<Post> posts;

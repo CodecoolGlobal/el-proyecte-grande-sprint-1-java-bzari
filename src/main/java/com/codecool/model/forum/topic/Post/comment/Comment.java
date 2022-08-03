@@ -2,12 +2,10 @@ package com.codecool.model.forum.topic.Post.comment;
 
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.user.Users;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.PipedOutputStream;
 import java.time.LocalDate;
 
@@ -25,9 +23,10 @@ public class Comment {
 	private LocalDate timestamp;
 	private String message;
 	private int upvote;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Users user;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Post post;
 
 }

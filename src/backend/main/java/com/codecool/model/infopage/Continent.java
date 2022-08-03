@@ -23,33 +23,12 @@ public class Continent {
 	@OneToMany(mappedBy = "continent", cascade = CascadeType.ALL)
 	private List<Location> locations;
 
-	public int getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public List<Location> getLocations() {
-		return locations;
-	}
-
-	public List<MapDTO> getAllLocationDTO(){
-		List<MapDTO> allLocationDTO = new ArrayList<>();
-		for (Location location : locations) {
-			allLocationDTO.add(new MapDTO(location.getName(), location.getId()));
-		}
-		return allLocationDTO;
-	}
-
-	public Location getLocationByName(String locationName){
-		for (Location location : locations) {
-			if (location.getName().equals(locationName)){
-				return location;
-			}
-		}
-		return null;
-	}
+//	public List<MapDTO> getAllLocationDTO(){
+//		List<MapDTO> allLocationDTO = new ArrayList<>();
+//		for (Location location : locations) {
+//			allLocationDTO.add(new MapDTO(location.getName(), location.getId()));
+//		}
+//		return allLocationDTO;
+//	}
 }
 

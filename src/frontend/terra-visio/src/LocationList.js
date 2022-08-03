@@ -7,7 +7,7 @@ export function LocationList(){
     const { name } = useParams();
     const [locationData, setLocationData] = React.useState([])
     useEffect(() => {
-        fetch(`/api/${name}/locations`,
+        fetch(`/api/continent/${name}`,
             {method:"GET",
                 headers:{"accept":"application/json"}})
             .then(res => res.json())

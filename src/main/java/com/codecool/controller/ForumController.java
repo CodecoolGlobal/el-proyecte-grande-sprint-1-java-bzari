@@ -59,6 +59,12 @@ public class ForumController {
         return postService.getPostById(postId);
     }
 
+    @GetMapping(value = "posts/{postId}/comments")
+    @ResponseBody
+    public List<Comment> getPostCommentsByPostId(@PathVariable Long postId){
+        return commentService.getPostCommentsByPostId(postId);
+    }
+
     //    TODO : edit post
     @PostMapping(value = "/{topicId}/newPost")
     public String addPost(@RequestBody Post post, @PathVariable Long topicId){

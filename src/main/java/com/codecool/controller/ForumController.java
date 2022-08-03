@@ -3,6 +3,7 @@ package com.codecool.controller;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
+import com.codecool.service.implementation.forum.CommentService;
 import com.codecool.service.implementation.forum.PostService;
 import com.codecool.service.implementation.forum.TopicService;
 import lombok.AllArgsConstructor;

@@ -3,9 +3,8 @@ import {ButtonCreator} from "./Button";
 import {Link, useParams} from "react-router-dom";
 // import {Test} from "./Test";
 
-export function LocationList(props){
+export function LocationList(){
     const { name } = useParams();
-    console.log(name)
     const [locationData, setLocationData] = React.useState([])
     useEffect(() => {
         fetch(`/api/${name}/locations`,

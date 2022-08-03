@@ -5,7 +5,6 @@ import com.codecool.model.infopage.Continent;
 import com.codecool.service.dao.ContinentCreatorDao;
 import com.codecool.service.dao.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -50,9 +49,9 @@ public class ContinentStorageMem implements ContinentStorageDao {
     @Override
     public List<MapDTO> getAllContinentName() {
         List<MapDTO> allCont = new ArrayList<>();
-        for (Continent continent : allContinents) {
-            allCont.add(new MapDTO(continent.getName(), continent.getId()));
-        }
+//        for (Continent continent : allContinents) {
+//            allCont.add(new MapDTO(continent.getName(), continent.getId()));
+//        }
         return allCont;
     }
 

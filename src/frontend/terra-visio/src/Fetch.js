@@ -3,7 +3,6 @@ import {ButtonCreator} from "./Button";
 import { Link } from "react-router-dom";
 
 export function ContinentList(){
-    //useState & useEffect
     const [continentData, setContinentData] = React.useState([])
     useEffect( () => {
         fetch('/api/allContinents',
@@ -12,14 +11,6 @@ export function ContinentList(){
             .then(res => res.json())
             .then(data => setContinentData(data))
     }, [])
-    
-    function removeInnerHtml(id){
-        document.getElementById(id).innerHTML = "";
-    }
-    const clickHandler = event => {
-        let str = event.target.dataset.name;
-        console.log(str)
-    }
 
     return (
         <><div className={"button-collection"} id={"btn-box"}>

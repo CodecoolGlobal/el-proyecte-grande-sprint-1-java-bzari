@@ -1,6 +1,6 @@
 package com.codecool.controller;
 
-import com.codecool.service.dao.ContinentStorageDao;
+import com.codecool.service.repositories.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

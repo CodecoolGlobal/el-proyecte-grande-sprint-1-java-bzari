@@ -12,7 +12,7 @@ export function LocationList(){
                 headers:{"accept":"application/json"}})
             .then(res => res.json())
             .then(data => setLocationData(data))
-    })
+    }, [])
 
     return (
         <>

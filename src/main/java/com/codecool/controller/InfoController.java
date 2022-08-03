@@ -47,6 +47,11 @@ public class InfoController {
         return continentStorage.getContinentByName(continentName).getLocations();
     }
 
+    @GetMapping(value="/")
+    public String index(){
+        return "index";
+    }
+
     //TODO: Refactor broken method calls.
     @GetMapping(value = "/{continentName}/{locationName}")
     @ResponseBody

@@ -24,6 +24,8 @@ public class ForumController {
     private TopicService topicService;
     @Autowired
     private PostService postService;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping(value = "/topics")
     @ResponseBody

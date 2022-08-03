@@ -3,8 +3,7 @@ package com.codecool.service.implementation.continents.locations.wildlife;
 import com.codecool.model.infopage.location.wildlife.ConservationStatus;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
 import com.codecool.model.infopage.location.wildlife.WildlifeType;
-import com.codecool.service.dao.WildLifeCreatorDao;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.codecool.service.repositories.WildLifeCreatorDao;
 
 import java.util.ArrayList;
 import java.util.List;

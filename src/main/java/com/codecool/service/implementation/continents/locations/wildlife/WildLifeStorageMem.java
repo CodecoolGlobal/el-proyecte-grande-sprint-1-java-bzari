@@ -1,10 +1,9 @@
 package com.codecool.service.implementation.continents.locations.wildlife;
 
 import com.codecool.model.infopage.location.wildlife.Wildlife;
-import com.codecool.service.dao.WildLifeCreatorDao;
-import com.codecool.service.dao.WildLifeStorageDao;
+import com.codecool.service.repositories.WildLifeCreatorDao;
+import com.codecool.service.repositories.WildLifeStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

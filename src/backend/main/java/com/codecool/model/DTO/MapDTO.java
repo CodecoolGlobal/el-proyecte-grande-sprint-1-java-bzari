@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 public class MapDTO {
     String name;
-    int id;
+    Long id;
 
-    public MapDTO(String name, int id) {
+    public MapDTO(String name, Long id) {
         this.name = name;
         this.id = id;
     }
@@ -16,7 +16,7 @@ public class MapDTO {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 }

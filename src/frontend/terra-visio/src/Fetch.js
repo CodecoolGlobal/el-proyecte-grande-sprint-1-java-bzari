@@ -15,7 +15,7 @@ export function ContinentList(){
     return (
         <><div className={"button-collection"} id={"btn-box"}>
             {continentData.length===0?"No data yet.":continentData.map(data => {
-                    return <button key={data.id} data-name={data.name} onClick={clickHandler}>{data.name}</button>
+                return <Link to={`/continent/${data.name}`}><ButtonCreator context={data.name}/></Link>
                 }
             )}
         </div></>

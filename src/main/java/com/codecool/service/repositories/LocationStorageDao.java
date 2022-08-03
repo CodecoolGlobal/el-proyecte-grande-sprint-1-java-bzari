@@ -1,4 +1,4 @@
-package com.codecool.service.dao;
+package com.codecool.service.repositories;
 
 import com.codecool.model.infopage.location.Location;
 

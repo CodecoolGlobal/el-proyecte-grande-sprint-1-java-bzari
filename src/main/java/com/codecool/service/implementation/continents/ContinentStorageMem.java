@@ -2,10 +2,9 @@ package com.codecool.service.implementation.continents;
 
 import com.codecool.model.DTO.MapDTO;
 import com.codecool.model.infopage.Continent;
-import com.codecool.service.dao.ContinentCreatorDao;
-import com.codecool.service.dao.ContinentStorageDao;
+import com.codecool.service.repositories.ContinentCreatorDao;
+import com.codecool.service.repositories.ContinentStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,9 +1,8 @@
 package com.codecool.service.implementation.continents;
 
 import com.codecool.model.infopage.Continent;
-import com.codecool.service.dao.ContinentCreatorDao;
-import com.codecool.service.dao.LocationStorageDao;
-import com.codecool.service.implementation.continents.locations.LocationStorageMem;
+import com.codecool.service.repositories.ContinentCreatorDao;
+import com.codecool.service.repositories.LocationStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

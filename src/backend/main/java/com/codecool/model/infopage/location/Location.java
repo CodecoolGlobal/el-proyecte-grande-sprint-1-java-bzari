@@ -2,6 +2,7 @@ package com.codecool.model.infopage.location;
 
 import com.codecool.model.infopage.Continent;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;

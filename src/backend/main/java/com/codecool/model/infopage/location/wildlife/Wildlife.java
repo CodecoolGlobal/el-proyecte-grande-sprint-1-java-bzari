@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Wildlife {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	@ManyToOne
 	private Location location;
 	private String name;

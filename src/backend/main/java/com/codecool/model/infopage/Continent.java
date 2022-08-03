@@ -17,7 +17,7 @@ import java.util.List;
 public class Continent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	private String name;
 	@OneToMany(mappedBy = "continent", cascade = CascadeType.ALL)
 	private List<Location> locations;

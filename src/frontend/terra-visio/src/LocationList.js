@@ -17,7 +17,7 @@ export function LocationList(props){
 
     return (
         <>
-            {locationData.length===0?"No location-dada accessible":locationData.map(data => {
+            {locationData.length===0?"No location-data accessible":locationData.map(data => {
                 // return <ButtonCreator context={data.name}/>
                 return <Link to={`/location/${data.name}`}><ButtonCreator context={data.name}/></Link>
             })}

@@ -4,7 +4,6 @@ import com.codecool.model.infopage.location.wildlife.Wildlife;
 import com.codecool.service.dao.WildLifeCreatorDao;
 import com.codecool.service.dao.WildLifeStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -31,11 +30,11 @@ public class WildLifeStorageMem implements WildLifeStorageDao {
     @Override
     public List<Wildlife> getWildlifeByLocationId(int locationId){
         List<Wildlife> result = new ArrayList<>();
-        for (Wildlife wildlife : allWildlife) {
-            if(wildlife.getLocationId() == locationId){
-                result.add(wildlife);
-            }
-        }
+//        for (Wildlife wildlife : allWildlife) {
+//            if(wildlife.getLocationId() == locationId){
+//                result.add(wildlife);
+//            }
+//        }
         return result;
     }
 }

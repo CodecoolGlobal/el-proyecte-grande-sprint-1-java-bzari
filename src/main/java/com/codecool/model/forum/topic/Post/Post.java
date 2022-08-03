@@ -22,11 +22,12 @@ public class Post {
     private Long id;
     private String title;
     private String content;
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
     private List<Comment> replies;
     @ManyToOne(cascade = CascadeType.ALL)
     private Users user;
     @ManyToOne
+    @JsonIgnore
     private Topic topic;
     private int viewCount;
     private int replyCount;

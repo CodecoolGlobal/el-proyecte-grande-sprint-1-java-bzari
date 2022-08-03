@@ -27,7 +27,7 @@ public class Topic {
 	private LocalDate timestamp;
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Users user;
-	@OneToMany(mappedBy = "topic")
-	private Set<Post> posts;
-
+	@OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
+//	@ElementCollection
+	private List<Post> posts;
 }

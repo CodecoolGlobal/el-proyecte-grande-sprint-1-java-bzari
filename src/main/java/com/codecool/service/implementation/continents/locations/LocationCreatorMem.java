@@ -2,9 +2,8 @@ package com.codecool.service.implementation.continents.locations;
 
 import com.codecool.model.infopage.location.Location;
 import com.codecool.model.infopage.location.wildlife.Wildlife;
-import com.codecool.service.dao.LocationCreatorDao;
-import com.codecool.service.dao.WildLifeStorageDao;
-import com.codecool.service.implementation.continents.locations.wildlife.WildLifeStorageMem;
+import com.codecool.service.repositories.LocationCreatorDao;
+import com.codecool.service.repositories.WildLifeStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

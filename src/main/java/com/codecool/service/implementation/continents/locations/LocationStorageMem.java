@@ -1,10 +1,9 @@
 package com.codecool.service.implementation.continents.locations;
 
 import com.codecool.model.infopage.location.Location;
-import com.codecool.service.dao.LocationCreatorDao;
-import com.codecool.service.dao.LocationStorageDao;
+import com.codecool.service.repositories.LocationCreatorDao;
+import com.codecool.service.repositories.LocationStorageDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 import logo from './Resources/logo.svg';
 import './Resources/App.css';
-import {ContinentList} from "./ContinentList";
+import {ContinentList} from "./Fetch.js";
 import React from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./LocationList";

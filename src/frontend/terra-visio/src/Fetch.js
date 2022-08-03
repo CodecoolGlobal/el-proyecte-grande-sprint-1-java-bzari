@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function ContinentList(){
     const [continentData, setContinentData] = React.useState([])
     useEffect( () => {
-        fetch('/api/allContinents',
+        fetch('/api/continent/allContinents',
             {method:"GET",
             headers: {"accept":"application/json"}})
             .then(res => res.json())

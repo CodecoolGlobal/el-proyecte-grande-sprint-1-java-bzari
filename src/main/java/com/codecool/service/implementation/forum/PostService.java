@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Builder
 @NoArgsConstructor
@@ -25,5 +27,7 @@ public class PostService {
     public void addPost(Post post){
         postRepository.save(post);
     }
+
+    public List<Post> getPostsByTopicId(Long topicId){return postRepository.getPostsByTopicId(topicId);}
 
 }

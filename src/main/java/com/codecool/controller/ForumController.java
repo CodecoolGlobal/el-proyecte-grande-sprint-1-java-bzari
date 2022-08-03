@@ -40,6 +40,8 @@ public class ForumController {
 //        TODO : return to topics page
     }
 
+    @GetMapping(value = "/topics/{topicId}/titles")
+    public List<String> getTopicNameByTopicId(@PathVariable Long topicId){return topicService.getTopicNameByTopicId(topicId);}
 
 
     @GetMapping(value = "/topics/{topicId}/posts")

@@ -38,10 +38,11 @@ public class ForumController {
     }
 
 
-    @GetMapping(value = "{topicId}")
+
+    @GetMapping(value = "/topics/{topicId}/posts")
     @ResponseBody
-    public Topic getTopicById(@PathVariable Long topicId){
-        return topicService.getTopicById(topicId);
+    public List<Post> getTopicPostsByTopicId(@PathVariable Long topicId){
+        return postService.getPostsByTopicId(topicId);
     }
 
     //    TODO : edit topic

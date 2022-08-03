@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -32,5 +33,10 @@ public class TopicService {
     public Topic getTopicById(Long id){return topicRepository.getTopicById(id);}
 
     public void addNewTopic(Topic topic){topicRepository.save(topic);}
+
+    public List<String> getTopicNameByTopicId(Long topicId){
+        List<String> titles = new ArrayList<>();
+        titles.add(topicRepository.getTopicById(topicId).getTitle());
+        return titles;};
 
 }

@@ -2,8 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {Col, Container, ListGroup, Row} from "react-bootstrap";
 // import demo from './demo.jpg'
-import shrimp from './Resources/shrimp.jpg'
-import turtle from './Resources/turtle.jpg'
+import shrimp from '../Resources/shrimp.jpg'
+import turtle from '../Resources/turtle.jpg'
 
 
 function BasicExample() {

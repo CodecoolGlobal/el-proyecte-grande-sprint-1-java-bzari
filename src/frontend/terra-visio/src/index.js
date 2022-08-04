@@ -3,7 +3,7 @@ import './Resources/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import Header from "./Navbar";
+import Header from "./header/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './Resources/index.css';

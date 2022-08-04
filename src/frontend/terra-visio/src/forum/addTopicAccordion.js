@@ -30,11 +30,11 @@ function TopicButton() {
         const [title, setTitle] = useState('');
         const [description, setDescription] = useState('');
         const [timestamp, setTimestamp] = useState('');
-        const [current_user, setUser] = useState(null);
+        const [currentUser, setUser] = useState(null);
 
         const handleSubmit = (e) => {
             e.preventDefault();
-            const topic = { title, description, timestamp, current_user}
+            const topic = { title, description, timestamp, currentUser}
 
             console.log()
 
@@ -59,11 +59,13 @@ function TopicButton() {
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" >
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control type="text"
-                                              onChange={(e) => setTitle(e.target.value)}></Form.Control>
+                                              onChange={(e) =>
+                                                  setTitle(e.target.value)}></Form.Control>
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control as="textarea" rows={3}
                                               type="text"
-                                              onChange={(e) => setDescription(e.target.value)}
+                                              onChange={(e) =>
+                                                  setDescription(e.target.value)}
                                 />
                             </Form.Group>
                             <Button variant="dark" type="submit">

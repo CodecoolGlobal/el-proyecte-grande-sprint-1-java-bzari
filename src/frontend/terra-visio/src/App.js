@@ -6,7 +6,7 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./infopages/LocationList";
 import {Test} from "./Test";
 
-import SinglePostPage from "./infopages/PostPage";
+import SinglePostPage from "./forum/PostPage";
 import InfoPage from "./infopages/InfoPage";
 import Topics from "./forum/ForumTopics";
 import Posts from "./forum/TopicPosts";

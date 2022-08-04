@@ -8,7 +8,7 @@ import React, {useEffect} from "react";
 
 function SinglePostPage() {
     const { title, id } = useParams();
-    const [singlePostData, setSinglePostData] = React.useState([])
+    const [singlePostData, setSinglePostData] = React.useState({})
     useEffect(() => {
         fetch(`/forum/posts/${id}`,
             {method:"GET",

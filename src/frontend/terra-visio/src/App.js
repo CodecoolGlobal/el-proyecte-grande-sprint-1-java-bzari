@@ -16,7 +16,7 @@ function App() {
     <div className="App">
           <Routes>
               <Route path="/" element={<ContinentList/>}/>
-              <Route path="/:name/locationlist" element={<LocationList/>}/>
+              <Route path="/continent/:name" element={<LocationList/>}/>
               <Route path="/location/:name" element={<InfoPage/>}/>
               <Route path="/forum" element={<Topics/>}/>
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>

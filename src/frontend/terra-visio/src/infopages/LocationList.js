@@ -4,17 +4,16 @@ import {Link, useParams} from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import {ListGroup} from "react-bootstrap";
 
-export function LocationList(props){
+export function LocationList(){
     const { name } = useParams();
-    console.log(name)
     const [locationData, setLocationData] = React.useState([])
     useEffect(() => {
-        fetch(`/api/${name}/locations`,
+        fetch(`/api/continent/${name}`,
             {method:"GET",
                 headers:{"accept":"application/json"}})
             .then(res => res.json())
             .then(data => setLocationData(data))
-    })
+    }, [])
 
     return (
         <div className={"layout"}>

@@ -38,14 +38,14 @@ function PostButton() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const topic = { title, content, timestamp, currentUser, replyCount, viewCount, currentTopic}
+        const post = { title, content, timestamp, currentUser, replyCount, viewCount, currentTopic}
 
         console.log()
 
         fetch(`/forum/${id}/newPost`, {
             method : 'POST',
             headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify(topic)
+            body: JSON.stringify(post)
         }).then(() => {
         })
     }

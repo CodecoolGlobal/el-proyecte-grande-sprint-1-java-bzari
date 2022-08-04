@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import {ButtonCreator} from "../Button";
 import {Link, useParams} from "react-router-dom";
-// import {Test} from "./Test";
+import Card from 'react-bootstrap/Card';
+import {ListGroup} from "react-bootstrap";
 
 export function LocationList(props){
     const { name } = useParams();
@@ -16,11 +17,15 @@ export function LocationList(props){
     })
 
     return (
-        <>
+        <div className={"layout"}>
+        <Card>
+            <ListGroup>
             {locationData.length===0?"No location-data accessible":locationData.map(data => {
                 // return <ButtonCreator context={data.name}/>
-                return <Link to={`/location/${data.name}`}><ButtonCreator context={data.name}/></Link>
+                return <ListGroup.Item><Link to={`/location/${data.name}`}>{data.name}</Link></ListGroup.Item>
             })}
-        </>
+            </ListGroup>
+        </Card>
+        </div>
     )
 }

@@ -9,13 +9,25 @@ import ReactDOM from 'react-dom';
 import './Resources/index.css';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Header />
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
+                  <video
+                      autoPlay
+                      loop
+                      muted
+                      poster="https://assets.codepen.io/6093409/river.jpg"
+                  >
+                      <source
+                          src="https://assets.codepen.io/6093409/river.mp4"
+                          type="video/mp4"
+                      />
+                  </video>
+                  <BrowserRouter>
+                      <App />
+                  </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -4,9 +4,10 @@ import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.user.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -19,7 +20,9 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private LocalDate timestamp;
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date timestamp;
 	private String message;
 	private int upvote;
 	@ManyToOne

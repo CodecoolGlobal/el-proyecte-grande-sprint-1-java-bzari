@@ -3,9 +3,10 @@ package com.codecool.model.forum.topic;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.user.Users;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,9 @@ public class Topic {
     private Long id;
     private String title;
     private String description;
-    private LocalDate timestamp;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date timestamp;
     @ManyToOne
     private Users user;
     @OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)

@@ -43,7 +43,6 @@ function TopicButton() {
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(topic)
             }).then(() => {
-                console.log("topic added");
             })
         }
 
@@ -60,7 +59,7 @@ function TopicButton() {
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control type="text"
                                               onChange={(e) =>
-                                                  setTitle(e.target.value)}></Form.Control>
+                                                  setTitle(e.target.value)}/>
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control as="textarea" rows={3}
                                               type="text"

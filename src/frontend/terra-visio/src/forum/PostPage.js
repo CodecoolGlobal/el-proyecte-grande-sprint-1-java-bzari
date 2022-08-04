@@ -30,7 +30,7 @@ function SinglePostPage() {
                 {singlePostData.length===0?"No location-data accessible":singlePostData.replies?.map(data => {
                     return <ListGroup.Item>
                         <div>{data.message}</div>
-                        <div>Commented by: "user" at "time""</div>
+                        <div>Commented by: {data.user.username} at {data.timestamp}"</div>
                     </ListGroup.Item>})}
                 </ListGroup>
     <CommentButton/>

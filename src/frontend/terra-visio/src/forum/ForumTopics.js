@@ -36,7 +36,6 @@ function Topics(){
                 </ListGroup.Item>})}
             </ListGroup>
                 <TopicButton/>
-                )}
             </Card>
         </Container>
     )

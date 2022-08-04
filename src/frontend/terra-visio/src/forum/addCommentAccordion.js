@@ -2,10 +2,11 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {AccordionContext} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import React from "react";
+import {useParams} from "react-router-dom";
 
 
 function AddCommentToggle({ children, eventKey, callback }) {
@@ -26,6 +27,27 @@ function AddCommentToggle({ children, eventKey, callback }) {
 }
 
 function CommentButton() {
+    const { id } = useParams();
+    const [message, setMessage] = useState('');
+    const [timestamp, setTimestamp] = useState('');
+    const [currentUser, setUser] = useState(null);
+    const [upVote, setUpVote] = useState(0);
+    const [currentPost, setPost] = useState(null);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const topic = { message, timestamp, currentUser, upVote, currentPost}
+
+        console.log()
+
+        fetch(`/forum/${id}/newComment`, {
+            method : 'POST',
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(topic)
+        }).then(() => {
+        })
+    }
     return (
         <Accordion defaultActiveKey="0">
             <Card>
@@ -34,10 +56,14 @@ function CommentButton() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="1">
                     <Card.Body>
-                        <Form>
+                        <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Be nice!</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
+                                <Form.Control as="textarea" rows={3}
+                                              type="text"
+                                              onChange={(e) =>
+                                              setMessage(e.target.value)}
+                                />
                             </Form.Group>
                             <Button variant="dark" type="submit">
                                 Submit

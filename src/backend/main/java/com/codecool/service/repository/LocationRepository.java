@@ -16,9 +16,8 @@ import java.util.Optional;
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
     @Query(value = "SELECT l FROM Location l " +
-            "LEFT JOIN l.continent c " +
-            "WHERE c.name LIKE ?1")
-    Collection<Location> findAllByContinentName(String continentName);
+            "WHERE l.continent.name LIKE :continentName")
+    Collection<Location> findAllByContinentName(@Param("continentName") String continentName);
 
     @Query(value = "SELECT l FROM Location l WHERE l.name LIKE ?1")
     Optional<Location> findByName(String locationName);

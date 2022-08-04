@@ -14,7 +14,6 @@ import Posts from "./forum/TopicPosts";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
           <Routes>
               <Route path="/" element={<ContinentList/>}/>
               <Route path="/:name/locationlist" element={<LocationList/>}/>
@@ -23,7 +22,6 @@ function App() {
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
               <Route path="/forum/topics/:title/:id/:title" element={<SinglePostPage/>}/>
           </Routes>
-      </header>
     </div>
   );
 }

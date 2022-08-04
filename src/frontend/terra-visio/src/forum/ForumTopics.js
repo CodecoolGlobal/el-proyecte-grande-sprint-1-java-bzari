@@ -1,7 +1,9 @@
-import {Container, ListGroup} from "react-bootstrap";
+import {Col, Container, ListGroup, Row} from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import {useParams} from "react-router-dom";
 import React, {useEffect} from 'react';
+import TopicButton from "./addTopicAccordion";
+
 
 
 function Topics(){
@@ -19,7 +21,11 @@ function Topics(){
     return(
         <Container>
             <Card>
-            <Card.Title>Forum topics</Card.Title>
+                <Row>
+                    <Col>
+                        <Card.Title as="h1">Forum topics</Card.Title>
+                    </Col>
+                </Row>
             <ListGroup>
                 {forumTopicsData.length===0?"No location-data accessible":forumTopicsData.map(data => {
                 return <ListGroup.Item action href={`/forum/topics/${data.id}/${data.title}`}>
@@ -29,6 +35,7 @@ function Topics(){
                     </div>
                 </ListGroup.Item>})}
             </ListGroup>
+                <TopicButton/>
             </Card>
         </Container>
     )

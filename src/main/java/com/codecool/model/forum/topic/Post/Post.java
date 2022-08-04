@@ -5,8 +5,10 @@ import com.codecool.model.forum.topic.Topic;
 import com.codecool.model.user.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -31,4 +33,9 @@ public class Post {
     private Topic topic;
     private int viewCount;
     private int replyCount;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date timestamp;
+
 }

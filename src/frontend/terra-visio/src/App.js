@@ -5,6 +5,8 @@ import React from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./infopages/LocationList";
 import {Test} from "./Test";
+
+import SinglePostPage from "./infopages/PostPage";
 import InfoPage from "./infopages/InfoPage";
 import Topics from "./forum/ForumTopics";
 import Posts from "./forum/TopicPosts";
@@ -19,7 +21,7 @@ function App() {
               <Route path="/location/:name" element={<InfoPage/>}/>
               <Route path="/forum" element={<Topics/>}/>
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
-
+              <Route path="/forum/topics/:title/:id/:title" element={<SinglePostPage/>}/>
           </Routes>
       </header>
     </div>

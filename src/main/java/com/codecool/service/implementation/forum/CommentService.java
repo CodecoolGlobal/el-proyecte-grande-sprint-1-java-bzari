@@ -5,10 +5,11 @@ import com.codecool.service.repositories.CommentRepository;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,6 +23,8 @@ public class CommentService {
     public Comment getCommentById(Long commentId){
         return commentRepository.getCommentById(commentId);
     }
+
+    public void addComment(Comment comment){commentRepository.save(comment);}
 
     public void upVoteComment(Long commentId){
         commentRepository.getCommentById(commentId).getUpvote();

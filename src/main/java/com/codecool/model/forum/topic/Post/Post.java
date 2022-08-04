@@ -26,7 +26,7 @@ public class Post {
     private String content;
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
     private List<Comment> replies;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Users user;
     @ManyToOne
     @JsonIgnore

@@ -21,7 +21,7 @@ public class Location {
 	@ManyToOne
 	private Continent continent;
 	private String name;
-	@Lob
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	@JsonIgnore
 	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
@@ -30,6 +30,6 @@ public class Location {
 	private String sound;
 	@Lob
 	private String climate;
-	@Lob
+	@Column(columnDefinition = "TEXT")
 	private String crisis;
 }

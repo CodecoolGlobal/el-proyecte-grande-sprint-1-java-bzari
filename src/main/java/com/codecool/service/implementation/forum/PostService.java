@@ -8,10 +8,11 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

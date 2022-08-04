@@ -1,7 +1,9 @@
-import {Container, ListGroup} from "react-bootstrap";
+import {Col, Container, ListGroup, Row} from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import {useParams} from "react-router-dom";
 import React, {useEffect} from "react";
+import Button from "react-bootstrap/Button";
+import PostButton from "./addPostAccordion";
 
 
 function Posts(){
@@ -18,7 +20,16 @@ function Posts(){
     return(
         <Container>
             <Card>
-                    <Card.Title>{title}</Card.Title>
+                <Row>
+                    <Col>
+                        <Card.Title as="h1">{title}</Card.Title>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <Card.Subtitle as="h5">ide jön majd description</Card.Subtitle>
+                    </Col>
+                </Row>
                 <ListGroup>
                     {topicPostsData.length===0?"No location-data accessible":topicPostsData.map(data => {
                     return <ListGroup.Item action href={`/forum/topics/posts/${data.id}/${data.title}/`}>
@@ -29,6 +40,7 @@ function Posts(){
                     </ListGroup.Item>})}
 
                 </ListGroup>
+                <PostButton/>
             </Card>
         </Container>
     )

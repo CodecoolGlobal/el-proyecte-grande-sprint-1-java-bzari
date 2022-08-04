@@ -8,6 +8,7 @@ import {Test} from "./Test";
 import InfoPage from "./InfoPage";
 import Topics from "./ForumTopics";
 import Posts from "./TopicPosts";
+import SinglePostPage from "./PostPage";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
               <Route path="/location/:name" element={<InfoPage/>}/>
               <Route path="/forum" element={<Topics/>}/>
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
-
+              <Route path="/forum/topics/:title/:id/:title" element={<SinglePostPage/>}/>
           </Routes>
       </header>
     </div>

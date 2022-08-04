@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.PipedOutputStream;
 import java.time.LocalDate;
 
 @Entity
@@ -23,9 +22,9 @@ public class Comment {
 	private LocalDate timestamp;
 	private String message;
 	private int upvote;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Users user;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JsonIgnore
 	private Post post;
 

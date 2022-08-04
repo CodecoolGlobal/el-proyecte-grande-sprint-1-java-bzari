@@ -28,7 +28,6 @@ public class Location {
 	private List<Wildlife> wildlife;
 	private String video;
 	private String sound;
-	@Lob
 	private String climate;
 	@Column(columnDefinition = "TEXT")
 	private String crisis;

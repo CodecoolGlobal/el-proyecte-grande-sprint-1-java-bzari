@@ -21,13 +21,5 @@ public class Continent {
 	@JsonIgnore
 	@OneToMany(mappedBy = "continent", cascade = CascadeType.ALL)
 	private List<Location> locations;
-
-//	public List<MapDTO> getAllLocationDTO(){
-//		List<MapDTO> allLocationDTO = new ArrayList<>();
-//		for (Location location : locations) {
-//			allLocationDTO.add(new MapDTO(location.getName(), location.getId()));
-//		}
-//		return allLocationDTO;
-//	}
 }
 

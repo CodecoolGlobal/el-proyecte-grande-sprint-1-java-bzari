@@ -2,6 +2,7 @@ import {Container, ListGroup} from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import {useParams} from "react-router-dom";
 import React, {useEffect} from 'react';
+import {useState} from "@types/react";
 
 
 function Topics(){
@@ -15,6 +16,26 @@ function Topics(){
             .then(res => res.json())
             .then(data => setForumTopicsData(data))
     })
+
+    const createTopic = () => {
+        const [title, setTitle] = useState('');
+        const [description, setDescription] = useState('');
+        const [timestamp, setTimestamp] = useState('');
+        const [current_user, setUser] = useState(null);
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const topic = { title, description, timestamp, current_user}
+
+            fetch('/forum/topics/new', {
+                method : 'POST',
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(topic)
+            }).then(() => {
+                console.log("topic added");
+            })
+        }
+    }
 
     return(
         <Container>

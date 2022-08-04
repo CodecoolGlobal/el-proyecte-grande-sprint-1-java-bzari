@@ -21,12 +21,15 @@ public class Location {
 	@ManyToOne
 	private Continent continent;
 	private String name;
+	@Lob
 	private String description;
 	@JsonIgnore
 	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
 	private List<Wildlife> wildlife;
 	private String video;
 	private String sound;
+	@Lob
 	private String climate;
+	@Lob
 	private String crisis;
 }

@@ -21,6 +21,7 @@ public class Location {
 	@ManyToOne
 	private Continent continent;
 	private String name;
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	@JsonIgnore
 	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
@@ -28,5 +29,6 @@ public class Location {
 	private String video;
 	private String sound;
 	private String climate;
+	@Column(columnDefinition = "TEXT")
 	private String crisis;
 }

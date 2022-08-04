@@ -18,10 +18,14 @@ public class Wildlife {
 	@ManyToOne
 	private Location location;
 	private String name;
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	private double lifetime;
 	private String lifetimeInterval;
+	@Enumerated(EnumType.STRING)
 	private ConservationStatus status;
+	@Column(columnDefinition = "TEXT")
 	private String crisis;
+	@Enumerated(EnumType.STRING)
 	private WildlifeType type;
 }

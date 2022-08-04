@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useParams} from "react-router-dom";
 import React, {useEffect} from "react";
+import CommentButton from "./addCommentAccordion";
 
 
 function SinglePostPage() {
@@ -24,18 +25,6 @@ function SinglePostPage() {
             <Card.Text>Uploaded by: "user" at "time"</Card.Text>
                 <Card.Subtitle>{singlePostData.content}</Card.Subtitle>
         </Card>
-            <Card>
-            <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Add your comment</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
-                </Form.Group>
-                <Button variant="dark" type="submit">
-                    Submit
-                </Button>
-            </Form>
-            </Card>
-
 <Card>
             <ListGroup>
                 {singlePostData.length===0?"No location-data accessible":singlePostData.replies?.map(data => {
@@ -44,6 +33,7 @@ function SinglePostPage() {
                         <div>Commented by: "user" at "time""</div>
                     </ListGroup.Item>})}
                 </ListGroup>
+    <CommentButton/>
             </Card>
         </Container>
     )

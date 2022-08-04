@@ -3,6 +3,7 @@ package com.codecool.controller;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
+import com.codecool.service.implementation.UsersService;
 import com.codecool.service.implementation.forum.CommentService;
 import com.codecool.service.implementation.forum.PostService;
 import com.codecool.service.implementation.forum.TopicService;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping(value = "/forum")
@@ -27,16 +27,18 @@ public class ForumController {
     private PostService postService;
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private UsersService usersService;
 
     @GetMapping(value = "/topics")
     @ResponseBody
     public List<Topic> getAllTopics(){
         return topicService.getAllTopics();
     }
+
     @PostMapping(value = "/topics/new")
-    public String addTopic(@RequestBody Topic topic){
+    public void addTopic(@RequestBody Topic topic){
         topicService.addNewTopic(topic);
-        return "index";
 //        TODO : return to topics page
     }
 
@@ -69,13 +71,16 @@ public class ForumController {
     @PostMapping(value = "/{topicId}/newPost")
     public String addPost(@RequestBody Post post, @PathVariable Long topicId){
         post.setTopic(topicService.getTopicById(topicId));
+        post.setUser(usersService.getUsersById(1L));
         postService.addPost(post);
     return "index";
     }
 
-    @PostMapping(value = "/{topicId}/{postId}/newComment")
-    public void addCommentToPost(@RequestBody Comment comment, @PathVariable Long topicId, @PathVariable Long postId){
-
+    @PostMapping(value = "/{postId}/newComment")
+    public void addCommentToPost(@RequestBody Comment comment, @PathVariable Long postId){
+        comment.setPost(postService.getPostById(postId));
+        comment.setUser(usersService.getUsersById(1L));
+        commentService.addComment(comment);
     }
     //    TODO : edit comment
 

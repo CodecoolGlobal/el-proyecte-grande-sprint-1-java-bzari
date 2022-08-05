@@ -8,7 +8,7 @@ import PostButton from "./addPostAccordion";
 
 function Posts(){
     const { title, id } = useParams();
-    const [topicPostsData, setTopicPostsData] = React.useState([])
+    const [topicPostsData, setTopicPostsData] = React.useState({})
     useEffect(() => {
         fetch(`/forum/topics/${id}`,
             {method:"GET",

@@ -10,7 +10,7 @@ function Posts(){
     const { title, id } = useParams();
     const [topicPostsData, setTopicPostsData] = React.useState([])
     useEffect(() => {
-        fetch(`/forum/topics/${id}/posts`,
+        fetch(`/forum/topics/${id}`,
             {method:"GET",
                 headers:{"accept":"application/json"}})
             .then(res => res.json())
@@ -27,12 +27,12 @@ function Posts(){
                 </Row>
                 <Row>
                     <Col>
-                    <Card.Subtitle as="h5">ide jön majd description</Card.Subtitle>
+                    <Card.Subtitle as="h5">{topicPostsData.description}</Card.Subtitle>
                     </Col>
                 </Row>
                 <ListGroup>
-                    {topicPostsData.length===0?"No location-data accessible":topicPostsData.map(data => {
-                    return <ListGroup.Item action href={`/forum/topics/posts/${data.id}/${data.title}/`}>
+                    {topicPostsData.length===0?"No location-data accessible":topicPostsData.posts?.map(data => {
+                    return <ListGroup.Item action href={`/forum/topics/posts/${data.id}/${data.title}`}>
                         <div className="ms-2 me-auto">
                             <div className="font-weight-bold">{data.title}</div>
                             Uploaded by: {data.user.username} at {data.timestamp}

@@ -22,7 +22,7 @@ function SinglePostPage() {
         <Container>
         <Card>
             <Card.Title>{title}</Card.Title>
-            <Card.Text>Uploaded by: "user" at "time"</Card.Text>
+            <Card.Text>Uploaded by: {singlePostData.user?.username} at {singlePostData.timestamp}</Card.Text>
                 <Card.Subtitle>{singlePostData.content}</Card.Subtitle>
         </Card>
 <Card>

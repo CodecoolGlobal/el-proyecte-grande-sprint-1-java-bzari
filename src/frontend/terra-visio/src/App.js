@@ -20,7 +20,7 @@ function App() {
               <Route path="/location/:name" element={<InfoPage/>}/>
               <Route path="/forum" element={<Topics/>}/>
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
-              <Route path="/forum/topics/:title/:id/:title" element={<SinglePostPage/>}/>
+              <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>
           </Routes>
     </div>
   );

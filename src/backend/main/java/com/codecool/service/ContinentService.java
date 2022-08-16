@@ -9,11 +9,17 @@ import java.util.List;
 
 @Service
 public class ContinentService {
-    @Autowired
     private ContinentRepository continentRepository;
+
+    @Autowired
+    public ContinentService(ContinentRepository continentRepository) {
+        this.continentRepository = continentRepository;
+    }
 
     public List<Continent> getAllContinent(){
         return continentRepository.findAll();
     }
+
+
 
 }

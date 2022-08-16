@@ -1,6 +1,6 @@
 package com.codecool.model.user;
 
-public enum UsersType {
+public enum ApplicationUserType {
     USER,
     ADMIN
 }

@@ -52,27 +52,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
                 .anyRequest()
                 .authenticated();
-//                .and()
-//                .httpBasic();
-//        FORM BASED
-//                .formLogin()
-//                    .loginPage("/login").permitAll()
-//                    .defaultSuccessUrl("/courses", true)
-//                    .passwordParameter("password")
-//                    .usernameParameter("username")
-//                .and()
-//                .rememberMe()    //defaults to 2 weeks
-//                    .tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21))
-//                    .key("somethingverysecured")
-//                    .rememberMeParameter("remember-me")
-//                .and()
-//                .logout()
-//                    .logoutUrl("/logout")
-////                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST")) if csrf disabled
-//                    .clearAuthentication(true)
-//                    .invalidateHttpSession(true)
-//                    .deleteCookies("JSESSIONID", "remember-me")
-//                    .logoutSuccessUrl("/login");
 
     }
     @Override

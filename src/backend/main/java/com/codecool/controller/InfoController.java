@@ -22,11 +22,15 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/api")
 public class InfoController {
-    @Autowired
-    private LocationService locationService;
+
+    private final LocationService locationService;
+    private final ContinentService continentService;
 
     @Autowired
-    private ContinentService continentService;
+    public InfoController(LocationService locationService, ContinentService continentService) {
+        this.locationService = locationService;
+        this.continentService = continentService;
+    }
 
     @GetMapping(value = "/continent/allContinents")
     @ResponseBody

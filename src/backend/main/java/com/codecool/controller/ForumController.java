@@ -3,7 +3,7 @@ package com.codecool.controller;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
-import com.codecool.service.users.UsersService;
+import com.codecool.service.users.ApplicationUserService;
 import com.codecool.service.forum.CommentService;
 import com.codecool.service.forum.PostService;
 import com.codecool.service.forum.TopicService;
@@ -28,7 +28,7 @@ public class ForumController {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private UsersService usersService;
+    private ApplicationUserService usersService;
 
     @GetMapping(value = "/topics")
     @ResponseBody

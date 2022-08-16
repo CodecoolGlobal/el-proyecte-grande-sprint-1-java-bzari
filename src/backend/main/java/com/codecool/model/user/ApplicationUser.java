@@ -5,9 +5,14 @@ import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
+
+import static com.codecool.model.user.ApplicationUserType.ADMIN;
 
 @Entity
 @Getter
@@ -15,7 +20,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApplicationUser {
+public class ApplicationUser implements UserDetails {
 
 	@Id
 	@GeneratedValue
@@ -33,6 +38,32 @@ public class ApplicationUser {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Comment> userComments;
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		type = ADMIN;
+		return type.getGrantedAuthorities();
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 //	private List<Location> favorites;
 
 }

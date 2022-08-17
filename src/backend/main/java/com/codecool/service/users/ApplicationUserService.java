@@ -14,10 +14,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class ApplicationUserService implements UserDetailsService {
-    @Autowired
+
     UserRepository userRepository;
+
+    @Autowired
+    public ApplicationUserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public ApplicationUser getUsersById(Long userId){
         return userRepository.getUsersById(userId);

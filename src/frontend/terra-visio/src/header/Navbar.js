@@ -6,6 +6,7 @@ import {List, PersonCircle} from 'react-bootstrap-icons';
 import {Container, Form} from "react-bootstrap";
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import RegisterForm from "../registerAndLogin/RegisterForm";
 
 
 function Header(){
@@ -27,7 +28,7 @@ function Header(){
                         <NavDropdown title={<PersonCircle />} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item href="/register">
                                 Register
                             </NavDropdown.Item>
                         </NavDropdown>

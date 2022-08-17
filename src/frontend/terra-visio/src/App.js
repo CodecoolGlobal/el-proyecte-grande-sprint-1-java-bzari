@@ -10,6 +10,7 @@ import SinglePostPage from "./forum/PostPage";
 import InfoPage from "./infopages/InfoPage";
 import Topics from "./forum/ForumTopics";
 import Posts from "./forum/TopicPosts";
+import Registration from "./registerAndLogin/RegisterForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/forum" element={<Topics/>}/>
               <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
               <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>
+              <Route path="/register" element={<Registration/>}/>
           </Routes>
     </div>
   );

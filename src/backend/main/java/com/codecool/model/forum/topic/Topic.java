@@ -1,7 +1,7 @@
 package com.codecool.model.forum.topic;
 
 import com.codecool.model.forum.topic.Post.Post;
-import com.codecool.model.user.Users;
+import com.codecool.model.user.ApplicationUser;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -26,7 +26,7 @@ public class Topic {
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
     @ManyToOne
-    private Users user;
+    private ApplicationUser user;
     @OneToMany(mappedBy = "topic", fetch = FetchType.EAGER)
 //	@ElementCollection
     private List<Post> posts;

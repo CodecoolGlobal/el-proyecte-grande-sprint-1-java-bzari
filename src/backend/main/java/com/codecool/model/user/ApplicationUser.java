@@ -5,7 +5,6 @@ import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.usertype.UserType;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -16,10 +15,10 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class ApplicationUser {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String username;
 	private String password;

@@ -1,6 +1,6 @@
 --Forum
 
-INSERT INTO users (id, email, password, username) VALUES (1, 'asd@gmail.com', 'asd', 'IamGod666');
+INSERT INTO application_user (email, password, username) VALUES ('asd@gmail.com', 'asd', 'IamGod666');
 INSERT INTO topic (description, timestamp, title, user_id) VALUES ('Generally discussing things', current_timestamp,'General discussion', 1);
 INSERT INTO post (content, reply_count, timestamp, title, view_count, topic_id, user_id) VALUES ('Are they dangerous?', 0, current_timestamp,'Rabbits', 0, 1, 1);
 INSERT INTO comment (message, timestamp, upvote, post_id, user_id) VALUES ('they will eat you:)', current_timestamp,0, 1, 1);

@@ -6,7 +6,8 @@ import lombok.Getter;
 public enum ApplicationUserPermission {
 
     POST_WRITE("post:write"),
-    POST_READ("post:read");
+    POST_READ("post:read"),
+    TOPIC_READ("topic:read");
 
     private final String permission;
 

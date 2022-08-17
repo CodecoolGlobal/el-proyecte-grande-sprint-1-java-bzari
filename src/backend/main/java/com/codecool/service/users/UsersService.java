@@ -1,6 +1,6 @@
 package com.codecool.service.users;
 
-import com.codecool.model.user.Users;
+import com.codecool.model.user.ApplicationUser;
 import com.codecool.service.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +16,11 @@ public class UsersService {
     @Autowired
     UserRepository userRepository;
 
-    public Users getUsersById(Long userId){
+    public ApplicationUser getUsersById(Long userId){
         return userRepository.getUsersById(userId);
+    }
+    public void addNewRegisteredUser(ApplicationUser user){
+        //TODO user pwd encrypt
+        userRepository.save(user);
     }
 }

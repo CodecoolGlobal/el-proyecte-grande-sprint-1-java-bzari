@@ -23,7 +23,7 @@ import static com.codecool.model.user.ApplicationUserType.ADMIN;
 public class ApplicationUser implements UserDetails {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String username;
 	private String password;
@@ -42,7 +42,7 @@ public class ApplicationUser implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		type = ADMIN;
+//		type = ADMIN;
 		return type.getGrantedAuthorities();
 	}
 

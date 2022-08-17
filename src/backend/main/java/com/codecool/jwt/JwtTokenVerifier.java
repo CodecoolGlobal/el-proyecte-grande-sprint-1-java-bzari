@@ -30,8 +30,9 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
 
-        if (Strings.isNullOrEmpty(authorizationHeader) || !authorizationHeader.startsWith(" Bearer ")) {
+        if (Strings.isNullOrEmpty(authorizationHeader) || !authorizationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(httpServletRequest, httpServletResponse);
+            return;
         }
         String token = authorizationHeader.replace("Bearer ", "");
         try {
@@ -63,7 +64,6 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);
-
 
     }
 }

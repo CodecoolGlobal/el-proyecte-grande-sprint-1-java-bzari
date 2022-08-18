@@ -19,7 +19,7 @@ public class LocationService {
         Collection<Location> loc = locationRepository.findAllByContinentName(continentName);
         Collection<MapDTO> mapDTOS = new ArrayList<>();
         for (Location location : loc) {
-            mapDTOS.add(new MapDTO(location.getName(), location.getId()));
+            mapDTOS.add(new MapDTO(location.getName(), location.getId(), location.getContinent().getId(), location.getAltitude(), location.getLongitude()));
         }
         return mapDTOS;
     }

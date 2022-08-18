@@ -20,8 +20,9 @@ function LoginForm() {
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(login)
         }).then( response => {
-            localStorage.setItem('jwt-token', response.headers.get("Authorization"))
-        })
+            if(response.headers.get("Authorization")){
+            localStorage.setItem('jwt-token', response.headers.get("Authorization"))}
+        }, navigate('/'))
     }
 
     return (

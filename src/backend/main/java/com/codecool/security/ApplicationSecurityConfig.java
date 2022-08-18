@@ -41,11 +41,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
+                .cors()
+                .and()
                 .addFilter(new JwtUsernamePasswordAuthenticationFilter(authenticationManager()))
                 .addFilterAfter(new JwtTokenVerifier(), JwtUsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/", "index", "/css/*", "/js/*", "/api/**", "/user/registration").permitAll()
-                .antMatchers("/forum/**").permitAll()
+                .antMatchers("/", "index", "/css/*", "/js/*", "/api/**", "/user/**", "/forum/topics/**").permitAll()
+                .antMatchers("/forum/new_topic").hasRole(ADMIN.name())
 //                .antMatchers("/api/continent/allContinents").hasRole(ADMIN.name())
 //                .antMatchers(HttpMethod.DELETE, "management/api/**").hasAuthority(COURSER_WRITE.name())
 //                .antMatchers(HttpMethod.POST, "management/api/**").hasAuthority(COURSER_WRITE.name())
@@ -67,4 +69,5 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         provider.setUserDetailsService(appUserService);
         return provider;
     }
+
 }

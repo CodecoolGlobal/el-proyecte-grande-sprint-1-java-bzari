@@ -19,4 +19,16 @@ public class MapDTO {
     public Long getId() {
         return id;
     }
+
+    public BigDecimal getAltitude() {
+        return altitude;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
+
+    public Long getContinentId() {
+        return continentId;
+    }
 }

@@ -38,7 +38,7 @@ function TopicButton() {
 
             console.log()
 
-            fetch('/forum/topics/new', {
+            fetch('/forum/new_topic', {
                 method : 'POST',
                 headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("jwt-token")},
                 body: JSON.stringify(topic)

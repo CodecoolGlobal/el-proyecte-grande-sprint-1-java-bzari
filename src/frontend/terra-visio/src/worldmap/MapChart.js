@@ -28,11 +28,11 @@ const MapChart = ( props ) => {
                                     }}
                                     style={{
                                         default: {
-                                            fill: "#D6D6DA",
+                                            // fill: "#D6D6DA",
                                             outline: "none"
                                         },
                                         hover: {
-                                            fill: "#F53",
+                                            // fill: "#F53",
                                             outline: "none"
                                         },
                                         pressed: {

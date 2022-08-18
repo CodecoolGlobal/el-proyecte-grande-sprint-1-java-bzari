@@ -51,4 +51,11 @@ public class InfoController {
     public Optional<Location> getLocation(@PathVariable String locationName){
         return locationService.getLocationByName(locationName);
     }
+
+    //TODO:
+    @GetMapping("/continents/map_coordinates")
+    @ResponseBody
+    public List<Optional> getCoordinatesDTO(){
+        return null;
+    }
 }

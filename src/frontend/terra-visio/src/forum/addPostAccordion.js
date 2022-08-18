@@ -34,15 +34,12 @@ function PostButton() {
     const [replyCount, setReplyCount] = useState(0);
     const [viewCount, setViewCount] = useState(0);
     const [currentTopic, setTopic] = useState(null);
-    const navigate = useNavigate();
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const post = { title, content, timestamp, currentUser, replyCount, viewCount, currentTopic}
-
-        console.log()
 
         fetch(`/forum/${id}/newPost`, {
             method : 'POST',

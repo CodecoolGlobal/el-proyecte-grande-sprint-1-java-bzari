@@ -25,7 +25,7 @@ function Header(){
                     </Nav>
                     <Nav className="me-auto">
                         <NavDropdown title={<PersonCircle />} id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
+                            <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/register">
                                 Register

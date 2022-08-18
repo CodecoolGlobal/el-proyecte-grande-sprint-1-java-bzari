@@ -40,7 +40,7 @@ function CommentButton() {
         const comment = { message, timestamp, currentUser, upVote, currentPost}
         fetch(`/forum/${id}/newComment`, {
             method : 'POST',
-            headers: {"Content-Type" : "application/json"},
+            headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("Authorization")},
             body: JSON.stringify(comment)
         }).then(() => {
         }, [])

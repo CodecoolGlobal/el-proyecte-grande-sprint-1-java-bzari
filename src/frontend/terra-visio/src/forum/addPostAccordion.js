@@ -43,7 +43,7 @@ function PostButton() {
 
         fetch(`/forum/${id}/newPost`, {
             method : 'POST',
-            headers: {"Content-Type" : "application/json"},
+            headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("jwt-token")},
             body: JSON.stringify(post)
         }).then(() => {
         }, [])

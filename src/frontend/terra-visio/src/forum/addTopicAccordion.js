@@ -40,7 +40,7 @@ function TopicButton() {
 
             fetch('/forum/topics/new', {
                 method : 'POST',
-                headers: {"Content-Type" : "application/json"},
+                headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("jwt-token")},
                 body: JSON.stringify(topic)
             }).then(() => {
             })

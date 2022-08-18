@@ -16,6 +16,8 @@ const MapChart = ( props ) => {
                         {({ geographies }) =>
                             geographies.map((geo) => (
                                 <Geography
+                                    class={geo.properties.continent !=null ? "country " + geo.properties.continent : "country undefined-continent"}
+                                    id={geo.properties.name.toLowerCase()}
                                     key={geo.rsmKey}
                                     geography={geo}
                                     onMouseEnter={() => {

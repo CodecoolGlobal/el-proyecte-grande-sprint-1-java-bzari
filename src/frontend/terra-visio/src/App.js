@@ -25,16 +25,21 @@ function App() {
 
   return (
     <div className="App">
-        <MapChart setTooltipContent={setContent}/>
-        <ReactTooltip>{content}</ReactTooltip>
-          <Routes>
-              <Route path="/" element={<ContinentList/>}/>
-              <Route path="/continent/:name" element={<LocationList/>}/>
-              <Route path="/location/:name" element={<InfoPage/>}/>
-              <Route path="/forum" element={<Topics/>}/>
-              <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
-              <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>
-          </Routes>
+
+        <CoordinateContext.Provider value={setCoordinate}>
+
+            <MapChart setTooltipContent={setContent} center={coordinate}/>
+            <ReactTooltip>{content}</ReactTooltip>
+            <Routes>
+                <Route path="/" element={<ContinentList/>}/>
+                <Route path="/continent/:name" element={<LocationList/>}/>
+            {/*    <Route path="/location/:name" element={<InfoPage/>}/>*/}
+            {/*    <Route path="/forum" element={<Topics/>}/>*/}
+            {/*    <Route path="/forum/topics/:id/:title" element={<Posts/>}/>*/}
+            {/*    <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>*/}
+            </Routes>
+
+        </CoordinateContext.Provider>
     </div>
   );
 }

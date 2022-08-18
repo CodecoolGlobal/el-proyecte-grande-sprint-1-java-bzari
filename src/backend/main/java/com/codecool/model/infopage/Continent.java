@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -21,5 +22,7 @@ public class Continent {
 	@JsonIgnore
 	@OneToMany(mappedBy = "continent", cascade = CascadeType.ALL)
 	private List<Location> locations;
+	private BigDecimal altitude;
+	private BigDecimal longitude;
 }
 

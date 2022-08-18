@@ -32,4 +32,6 @@ public class Location {
 	private String climate;
 	@Column(columnDefinition = "TEXT")
 	private String crisis;
+	private BigDecimal altitude;
+	private BigDecimal longitude;
 }

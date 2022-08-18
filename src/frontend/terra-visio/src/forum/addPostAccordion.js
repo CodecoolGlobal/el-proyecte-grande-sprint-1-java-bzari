@@ -34,6 +34,8 @@ function PostButton() {
     const [replyCount, setReplyCount] = useState(0);
     const [viewCount, setViewCount] = useState(0);
     const [currentTopic, setTopic] = useState(null);
+    const navigate = useNavigate();
+
 
 
     const handleSubmit = (e) => {
@@ -47,7 +49,7 @@ function PostButton() {
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(post)
         }).then(() => {
-        })
+        }, [])
     }
     return (
         <Accordion defaultActiveKey="0">

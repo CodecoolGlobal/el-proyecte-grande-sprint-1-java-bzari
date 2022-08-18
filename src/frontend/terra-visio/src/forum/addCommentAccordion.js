@@ -43,7 +43,7 @@ function CommentButton() {
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(comment)
         }).then(() => {
-        })
+        }, [])
     }
     return (
         <Accordion defaultActiveKey="0">

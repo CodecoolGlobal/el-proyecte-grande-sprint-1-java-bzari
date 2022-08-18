@@ -25,20 +25,6 @@ export function ContinentList(){
     )
 }
 function eventListener(continentName){
-    switch (continentName){
-        case "europe":
-            const countryFixation = document.getElementById("germany");
-            countryFixation.innerHTML +=
-                `
-                <button>Europe</button>
-                `
-    }
-    // const allCountry = document.getElementsByClassName("country")
-    // console.log(allCountry)
-    // for (let country in allCountry) {
-    //     console.log(country)
-    //     country.style.fill = "yellow"
-    // }
     const countriesInContinent = document.getElementsByClassName(continentName.toLowerCase());
     for (let country of countriesInContinent) {
         country.style.fill = "#194952"

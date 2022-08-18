@@ -22,5 +22,7 @@ public class Continent {
 	@JsonIgnore
 	@OneToMany(mappedBy = "continent", cascade = CascadeType.ALL)
 	private List<Location> locations;
+	private BigDecimal altitude;
+	private BigDecimal longitude;
 }
 

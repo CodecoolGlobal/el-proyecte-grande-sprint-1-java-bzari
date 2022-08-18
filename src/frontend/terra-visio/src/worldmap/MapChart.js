@@ -59,6 +59,10 @@ const MapChart = ( props ) => {
                         return(
                             <Marker coordinates={[altitude, longitude]}>
                                 <g className={"marker continent-marker"}
+                                   onClick={() => {
+                                       toggleVisibilityOnContinentMarker();
+                                       setHighlight(data.name);
+                                   }}
                                    fill="none"
                                    stroke="#7dc1cd"
                                    strokeWidth="2"

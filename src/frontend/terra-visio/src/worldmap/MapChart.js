@@ -3,7 +3,8 @@ import {
     ZoomableGroup,
     ComposableMap,
     Geographies,
-    Geography
+    Geography,
+    Marker
 } from "react-simple-maps";
 
 const MapChart = ({ setTooltipContent }) => {

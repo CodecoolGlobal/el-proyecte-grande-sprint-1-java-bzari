@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import {ButtonCreator} from "../Button";
+import {CoordinateContext} from "../App";
 
 export function ContinentList(){
     const [continentData, setContinentData] = React.useState([])

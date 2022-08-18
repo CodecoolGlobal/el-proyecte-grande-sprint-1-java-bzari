@@ -8,6 +8,15 @@ import {
 } from "react-simple-maps";
 
 const MapChart = ( props ) => {
+    const[continentData, setContinentData] = useState([]);
+    useEffect(()=>{
+        fetch('/api/continent/allContinents',
+            {method:"GET",
+                headers: {"accept":"application/json"}})
+            .then(res => res.json())
+            .then(data => setContinentData(data))
+    }, [])
+
     return (
         <div data-tip="" style={{width: "80%", border:"2px solid black", display:"flex", justifyContent:"center"}}>
             <ComposableMap>

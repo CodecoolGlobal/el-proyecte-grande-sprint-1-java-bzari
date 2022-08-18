@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import {CoordinateContext} from "../App";
+import Button from "react-bootstrap/Button";
 
 export function ContinentList(){
     const [continentData, setContinentData] = React.useState([])
@@ -17,7 +18,7 @@ export function ContinentList(){
         <><div className={"button-collection"} id={"btn-box"}>
             {continentData.length===0?"No data yet.":continentData.map(data => {
                 return <Link to={`/continent/${data.name}`}>
-                    <button onClick={()=>{setCoordinate([15, 0]); eventListener(data.name)}}>{data.name}</button>
+                    <Button variant="dark" onClick={()=>{setCoordinate([15, 0]); eventListener(data.name)}}>{data.name}</Button>
                 </Link>
                 }
             )}
@@ -27,6 +28,6 @@ export function ContinentList(){
 function eventListener(continentName){
     const countriesInContinent = document.getElementsByClassName(continentName.toLowerCase());
     for (let country of countriesInContinent) {
-        country.style.fill = "#194952"
+        country.style.fill = "#7dc1cd"
     }
 }

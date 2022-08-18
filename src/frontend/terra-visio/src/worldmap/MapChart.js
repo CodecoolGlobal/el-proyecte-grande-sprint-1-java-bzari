@@ -21,10 +21,10 @@ const MapChart = ( props ) => {
                                     key={geo.rsmKey}
                                     geography={geo}
                                     onMouseEnter={() => {
-                                        setTooltipContent(`${geo.properties.name}`);
+                                        props.setTooltipContent(`${geo.properties.name}`);
                                     }}
                                     onMouseLeave={() => {
-                                        setTooltipContent("");
+                                        props.setTooltipContent("");
                                     }}
                                     style={{
                                         default: {

@@ -41,6 +41,6 @@ function eventListener(continentName){
     // }
     const countriesInContinent = document.getElementsByClassName(continentName.toLowerCase());
     for (let country of countriesInContinent) {
-        country.style.fill = "red"
+        country.style.fill = "#194952"
     }
 }

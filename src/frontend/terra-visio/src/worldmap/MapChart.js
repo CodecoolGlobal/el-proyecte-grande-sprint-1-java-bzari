@@ -45,7 +45,7 @@ const MapChart = ( props ) => {
                                             outline: "none"
                                         },
                                         pressed: {
-                                            fill: "#E42",
+                                            // fill: "#E42",
                                             outline: "none"
                                         }
                                     }}
@@ -59,14 +59,14 @@ const MapChart = ( props ) => {
                         return(
                             <Marker coordinates={[altitude, longitude]}>
                                 <g className={"marker continent-marker"}
-                                   fill="none"
-                                   stroke="#7dc1cd"
+                                   fill="#7dc1cd"
+                                   stroke="#fff"
                                    strokeWidth="2"
                                    strokeLinecap="round"
                                    strokeLinejoin="round"
                                    transform="translate(-12, -24)"
                                 >
-                                    <circle cx="12" cy="10" r="3" className={"marker continent-marker"}/>
+                                    {/*<circle cx="12" cy="10" r="3" className={"marker continent-marker"}/>*/}
                                     <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
                                 </g>
                             </Marker>

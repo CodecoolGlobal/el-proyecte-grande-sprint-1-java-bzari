@@ -13,6 +13,9 @@ import Posts from "./forum/TopicPosts";
 import MapChart from "./worldmap/MapChart";
 
 import ReactTooltip from "react-tooltip";
+import {TestButton} from "./TestButton";
+
+export const CoordinateContext = createContext();
 
 function App() {
     const [content, setContent] = useState("");

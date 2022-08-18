@@ -19,6 +19,10 @@ export const CoordinateContext = createContext();
 
 function App() {
     const [content, setContent] = useState("");
+
+    const [coordinate, setCoordinate] = useState([15, 0]);
+
+
   return (
     <div className="App">
         <MapChart setTooltipContent={setContent}/>

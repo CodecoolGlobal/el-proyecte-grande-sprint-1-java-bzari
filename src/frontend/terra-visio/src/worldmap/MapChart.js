@@ -44,6 +44,37 @@ const MapChart = ( props ) => {
                             ))
                         }
                     </Geographies>
+
+                    {/*ASIA*/}
+                    <Marker coordinates={[85, 35]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
+                    {/*AFRICA*/}
+                    <Marker coordinates={[20, 10]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
+                    {/*EUROPE*/}
+                    <Marker coordinates={[10, 50]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
+                    {/*NORTH-AMERICA*/}
+                    <Marker coordinates={[-100, 40]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
+                    {/*SOUTH-AMERICA*/}
+                    <Marker coordinates={[-420, 190]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
+                    {/*AUSTRALIA-OCEANIA*/}
+                    <Marker coordinates={[495, -25]}>
+                        <circle r={3} fill="#E42" className={"marker continent-marker"}/>
+                    </Marker>
+
                 </ZoomableGroup>
             </ComposableMap>
         </div>

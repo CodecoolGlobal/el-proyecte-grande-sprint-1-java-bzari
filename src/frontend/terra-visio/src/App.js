@@ -33,10 +33,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<ContinentList/>}/>
                 <Route path="/continent/:name" element={<LocationList/>}/>
-            {/*    <Route path="/location/:name" element={<InfoPage/>}/>*/}
-            {/*    <Route path="/forum" element={<Topics/>}/>*/}
-            {/*    <Route path="/forum/topics/:id/:title" element={<Posts/>}/>*/}
-            {/*    <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>*/}
+                <Route path="/location/:name" element={<InfoPage/>}/>
+                <Route path="/forum" element={<Topics/>}/>
+                <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
+                <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>
             </Routes>
 
         </CoordinateContext.Provider>

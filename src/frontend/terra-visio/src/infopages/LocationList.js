@@ -20,7 +20,7 @@ export function LocationList(){
             <Link to={'/'}><Button onClick={colorChange}>Rollback</Button></Link>
             {locationData.length===0?"No location-data accessible":locationData.map(data => {
                 // return <ButtonCreator context={data.name}/>
-                return <Link to={`/location/${data.name}`}><ButtonCreator context={data.name}/></Link>
+                return <Link to={`/location/${data.name}`}><Button variant="dark">{data.name}</Button></Link>
             })}
         </div></>
     )

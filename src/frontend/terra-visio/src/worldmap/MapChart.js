@@ -18,7 +18,7 @@ const MapChart = ( props ) => {
     }, [])
 
     return (
-        <div data-tip="" style={{width: "80%", border:"2px solid black", display:"flex", justifyContent:"center"}}>
+        <div data-tip="" style={{height: "100%", width: "50%", border:"2px solid black", display:"flex", justifyContent:"center"}}>
             <ComposableMap>
                 <ZoomableGroup center={props.center} zoom={1}>
                     <Geographies geography="/features.json">
@@ -59,7 +59,7 @@ const MapChart = ( props ) => {
                         return(
                             <Marker coordinates={[altitude, longitude]}>
                                 <g className={"marker continent-marker"}
-                                   fill="#7dc1cd"
+                                   fill="#99CD7D"
                                    stroke="#fff"
                                    strokeWidth="2"
                                    strokeLinecap="round"

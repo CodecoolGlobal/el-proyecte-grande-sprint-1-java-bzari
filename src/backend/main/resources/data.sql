@@ -7,7 +7,7 @@ INSERT INTO comment (message, timestamp, upvote, post_id, user_id) VALUES ('they
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Australia-Oceania - continentId:1
-INSERT INTO continent (name) VALUES ('Australia-Oceania');
+INSERT INTO continent (name, altitude, longitude) VALUES ('Australia-Oceania', 495, -25);
 
 -- Great Barrier reef - locationId:1
     INSERT INTO location (climate, crisis, description, name, sound, video, continent_id) VALUES ('Tropic','Rising ocean temperatures driven by human emissions of greenhouse gases have caused five mass bleaching events along the reef in 1998, 2002, 2016, 2017 and 2020. Hughes told the Guardian he believes a sixth mass bleaching event is now unfolding, and that it was not mild or local.', 'Great Barrier Reef, Extensive complex of coral reefs, shoals, and islets in the Pacific Ocean, off the northeastern coast of Australia. The largest deposit of coral in the world, it extends for more than 1,250 mi (2,000 km) along the coast of Queensland and has an area of some 135,000 sq mi (350,000 sq km).', 'Great Barrier reef', null, null, 1);
@@ -29,17 +29,17 @@ INSERT INTO continent (name) VALUES ('Australia-Oceania');
         INSERT INTO wildlife (crisis, description, lifetime, lifetime_interval, name, status, type, location_id) VALUES ('No current crisis', 'Description. Koalas are well-known for their large round head, big furry ears and big black nose. Their fur is usually grey-brown in colour with white fur on the chest, inner arms, ears and bottom. They have no fur on their nose or the palms of their paws.', 15, 'year on average', 'Koala', null, null, 3);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- North-America - ContinentId:2
-INSERT INTO continent (name) VALUES ('North-America');
+INSERT INTO continent (name, altitude, longitude) VALUES ('North-America', -100, 40);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- North-America - ContinentId:3
-INSERT INTO continent (name) VALUES ('South-America');
+INSERT INTO continent (name, altitude, longitude) VALUES ('South-America', -420, 190);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- North-America - ContinentId:4
-INSERT INTO continent (name) VALUES ('Europe');
+INSERT INTO continent (name, altitude, longitude) VALUES ('Europe', 10, 50);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- North-America - ContinentId:5
-INSERT INTO continent (name) VALUES ('Africa');
+INSERT INTO continent (name, altitude, longitude) VALUES ('Africa', 20, 10);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- North-America - ContinentId:6
-INSERT INTO continent (name) VALUES ('Asia');
+INSERT INTO continent (name, altitude, longitude) VALUES ('Asia', 85, 35);
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -38,7 +38,7 @@ function CommentButton() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const comment = { message, timestamp, currentUser, upVote, currentPost}
-        fetch(`/forum/${id}/newComment`, {
+        fetch(`/forum/${id}/new_Comment`, {
             method : 'POST',
             headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("Authorization")},
             body: JSON.stringify(comment)

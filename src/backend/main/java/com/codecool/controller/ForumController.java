@@ -84,7 +84,7 @@ public class ForumController {
     return "index";
     }
 
-    @PostMapping(value = "/{postId}/newComment")
+    @PostMapping(value = "/{postId}/new_Comment")
     public String addCommentToPost(@RequestBody Comment comment, @PathVariable Long postId){
         comment.setPost(postService.getPostById(postId));
         comment.setUser(usersService.getUsersById(1L));

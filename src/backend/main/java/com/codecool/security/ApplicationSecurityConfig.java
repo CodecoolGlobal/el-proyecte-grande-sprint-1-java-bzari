@@ -50,12 +50,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/forum/new_topic").hasRole(ADMIN.name())
                 .antMatchers("/forum/*/newComment").hasAnyRole(ADMIN.name(), USER.name())
                 .antMatchers("/forum/*/newPost").hasAnyRole(ADMIN.name(), USER.name())
-
-//                .antMatchers("/api/continent/allContinents").hasRole(ADMIN.name())
-//                .antMatchers(HttpMethod.DELETE, "management/api/**").hasAuthority(COURSER_WRITE.name())
-//                .antMatchers(HttpMethod.POST, "management/api/**").hasAuthority(COURSER_WRITE.name())
-//                .antMatchers(HttpMethod.PUT, "management/api/**").hasAuthority(COURSER_WRITE.name())
-//                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
                 .anyRequest()
                 .authenticated();
 

@@ -3,7 +3,6 @@ package com.codecool.controller;
 import com.codecool.model.DTO.ApplicationUserDTO;
 import com.codecool.model.user.ApplicationUser;
 import com.codecool.service.users.ApplicationUserService;
-import com.codecool.service.users.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;

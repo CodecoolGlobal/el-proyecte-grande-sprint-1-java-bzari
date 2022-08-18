@@ -4,7 +4,6 @@ import {ContinentList} from "./infopages/ContinentList";
 import React, {createContext, useEffect, useState} from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./infopages/LocationList";
-import {Test} from "./Test";
 
 import SinglePostPage from "./forum/PostPage";
 import InfoPage from "./infopages/InfoPage";
@@ -13,7 +12,9 @@ import Posts from "./forum/TopicPosts";
 import MapChart from "./worldmap/MapChart";
 
 import ReactTooltip from "react-tooltip";
-import {TestButton} from "./TestButton";
+
+import Registration from "./registerAndLogin/RegisterForm";
+import LoginForm from "./registerAndLogin/LoginForm";
 
 export const CoordinateContext = createContext();
 
@@ -37,6 +38,8 @@ function App() {
                 <Route path="/forum" element={<Topics/>}/>
                 <Route path="/forum/topics/:id/:title" element={<Posts/>}/>
                 <Route path="/forum/topics/posts/:id/:title" element={<SinglePostPage/>}/>
+                <Route path="/register" element={<Registration/>}/>
+                <Route path="/login" element={<LoginForm/>}/>
             </Routes>
 
         </CoordinateContext.Provider>

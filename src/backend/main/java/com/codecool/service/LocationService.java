@@ -12,8 +12,12 @@ import java.util.Optional;
 
 @Service
 public class LocationService {
-    @Autowired
     private LocationRepository locationRepository;
+
+    @Autowired
+    public LocationService(LocationRepository locationRepository) {
+        this.locationRepository = locationRepository;
+    }
 
     public Collection<MapDTO> getLocationsByContinentName(String continentName) {
         Collection<Location> loc = locationRepository.findAllByContinentName(continentName);
@@ -31,4 +35,9 @@ public class LocationService {
     public Optional<Location> getLocationByName(String locationName) {
         return locationRepository.findByName(locationName);
     }
+
+//    public Location getLocationByTest(String word){
+//        System.out.println(locationRepository.findLocationByNameContaining(word));
+//        return locationRepository.findLocationByNameContaining(word);
+//    }
 }

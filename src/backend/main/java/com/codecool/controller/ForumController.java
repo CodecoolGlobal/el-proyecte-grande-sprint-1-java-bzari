@@ -3,7 +3,7 @@ package com.codecool.controller;
 import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.forum.topic.Post.comment.Comment;
 import com.codecool.model.forum.topic.Topic;
-import com.codecool.service.users.UsersService;
+import com.codecool.service.users.ApplicationUserService;
 import com.codecool.service.forum.CommentService;
 import com.codecool.service.forum.PostService;
 import com.codecool.service.forum.TopicService;
@@ -28,7 +28,7 @@ public class ForumController {
     @Autowired
     private CommentService commentService;
     @Autowired
-    private UsersService usersService;
+    private ApplicationUserService usersService;
 
     @GetMapping(value = "/topics")
     @ResponseBody
@@ -36,7 +36,7 @@ public class ForumController {
         return topicService.getAllTopics();
     }
 
-    @PostMapping(value = "/topics/new")
+    @PostMapping(value = "/new_topic")
     public String addTopic(@RequestBody Topic topic){
         topicService.addNewTopic(topic);
         return "index";
@@ -84,7 +84,7 @@ public class ForumController {
     return "index";
     }
 
-    @PostMapping(value = "/{postId}/newComment")
+    @PostMapping(value = "/{postId}/new_Comment")
     public String addCommentToPost(@RequestBody Comment comment, @PathVariable Long postId){
         comment.setPost(postService.getPostById(postId));
         comment.setUser(usersService.getUsersById(1L));

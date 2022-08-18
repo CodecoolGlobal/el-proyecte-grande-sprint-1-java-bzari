@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {ButtonCreator} from "../Button";
 import {Link, useParams} from "react-router-dom";
+import Button from "react-bootstrap/Button";
 // import {Test} from "./Test";
 
 export function LocationList(){
@@ -16,11 +17,19 @@ export function LocationList(){
 
     return (
         <><div className={"button-collection"}>
-            <Link to={'/'}><ButtonCreator context={"Rollback"}/></Link>
-            {locationData.length===0?"No location-dada accessible":locationData.map(data => {
+            <Link to={'/'}><Button onClick={colorChange}>Rollback</Button></Link>
+            {locationData.length===0?"No location-data accessible":locationData.map(data => {
                 // return <ButtonCreator context={data.name}/>
                 return <Link to={`/location/${data.name}`}><ButtonCreator context={data.name}/></Link>
             })}
         </div></>
     )
+
+    function colorChange(){
+        const countriesInContinent = document.getElementsByClassName("country");
+        for (let country of countriesInContinent) {
+            country.style.fill = ""
+        }
+    }
+
 }

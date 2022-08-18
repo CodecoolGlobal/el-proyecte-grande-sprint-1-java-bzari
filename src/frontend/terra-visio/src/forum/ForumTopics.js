@@ -13,7 +13,7 @@ function Topics(){
     useEffect(() => {
         fetch(`/forum/topics`,
             {method:"GET",
-                headers:{"accept":"application/json"}})
+                headers:{"accept":"application/json", "Authorization" : localStorage.getItem("jwt-token")}})
             .then(res => res.json())
             .then(data => setForumTopicsData(data))
     },[])

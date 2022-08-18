@@ -98,4 +98,23 @@ const MapChart = ( props ) => {
     );
 };
 
+function toggleVisibilityOnContinentMarker(){
+    const continentMarkers = document.getElementsByClassName("continent-marker");
+    for (let marker of continentMarkers) {
+        marker.style.display==="none"?marker.style.display="block":marker.style.display="none"
+    }
+}
+function setHighlight(continentName){
+    const countriesInContinent = document.getElementsByClassName(continentName.toLowerCase());
+    for (let country of countriesInContinent) {
+        country.style.fill = "#194952"
+    }
+}
+function removeHighlight(){
+    const countriesInContinent = document.getElementsByClassName("country");
+    for (let country of countriesInContinent) {
+        country.style.fill = ""
+    }
+}
+
 export default memo(MapChart);

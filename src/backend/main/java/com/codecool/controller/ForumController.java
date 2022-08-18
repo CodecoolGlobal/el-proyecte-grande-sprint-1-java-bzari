@@ -36,7 +36,7 @@ public class ForumController {
         return topicService.getAllTopics();
     }
 
-    @PostMapping(value = "/topics/new")
+    @PostMapping(value = "/new_topic")
     public String addTopic(@RequestBody Topic topic){
         topicService.addNewTopic(topic);
         return "index";

@@ -11,7 +11,7 @@ const MapChart = ( props ) => {
     return (
         <div data-tip="" style={{width: "80%", border:"2px solid black", display:"flex", justifyContent:"center"}}>
             <ComposableMap>
-                <ZoomableGroup center={props.center} zoom={0}>
+                <ZoomableGroup center={props.center} zoom={1}>
                     <Geographies geography="/features.json">
                         {({ geographies }) =>
                             geographies.map((geo) => (

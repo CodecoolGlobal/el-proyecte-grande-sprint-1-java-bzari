@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {ButtonCreator} from "../Button";
 import {Link, useParams} from "react-router-dom";
-// import {Test} from "./Test";
 
 export function LocationList(){
     const { name } = useParams();

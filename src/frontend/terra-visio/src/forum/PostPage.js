@@ -13,10 +13,10 @@ function SinglePostPage() {
     useEffect(() => {
         fetch(`/forum/posts/${id}`,
             {method:"GET",
-                headers:{"accept":"application/json"}})
+                headers:{"accept":"application/json", "Authorization" : localStorage.getItem("jwt-token")}})
             .then(res => res.json())
             .then(data => setSinglePostData(data))
-    })
+    }, [])
 
     return(
         <Container>

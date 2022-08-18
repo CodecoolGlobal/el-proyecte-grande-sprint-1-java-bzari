@@ -36,18 +36,17 @@ function PostButton() {
     const [currentTopic, setTopic] = useState(null);
 
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const post = { title, content, timestamp, currentUser, replyCount, viewCount, currentTopic}
 
-        console.log()
-
         fetch(`/forum/${id}/newPost`, {
             method : 'POST',
-            headers: {"Content-Type" : "application/json"},
+            headers: {"Content-Type" : "application/json", "Authorization" : localStorage.getItem("jwt-token")},
             body: JSON.stringify(post)
         }).then(() => {
-        })
+        }, [])
     }
     return (
         <Accordion defaultActiveKey="0">

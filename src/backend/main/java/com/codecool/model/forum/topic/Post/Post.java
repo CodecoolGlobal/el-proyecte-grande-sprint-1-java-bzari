@@ -2,7 +2,7 @@ package com.codecool.model.forum.topic.Post;
 
 import com.codecool.model.forum.topic.Topic;
 import com.codecool.model.forum.topic.Post.comment.Comment;
-import com.codecool.model.user.Users;
+import com.codecool.model.user.ApplicationUser;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,7 +27,7 @@ public class Post {
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
     private List<Comment> replies;
     @ManyToOne
-    private Users user;
+    private ApplicationUser user;
     @ManyToOne
     @JsonIgnore
     private Topic topic;

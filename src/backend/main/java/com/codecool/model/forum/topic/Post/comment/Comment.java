@@ -1,7 +1,7 @@
 package com.codecool.model.forum.topic.Post.comment;
 
 import com.codecool.model.forum.topic.Post.Post;
-import com.codecool.model.user.Users;
+import com.codecool.model.user.ApplicationUser;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,7 +26,7 @@ public class Comment {
 	private String message;
 	private int upvote;
 	@ManyToOne
-	private Users user;
+	private ApplicationUser user;
 	@ManyToOne
 	@JsonIgnore
 	private Post post;

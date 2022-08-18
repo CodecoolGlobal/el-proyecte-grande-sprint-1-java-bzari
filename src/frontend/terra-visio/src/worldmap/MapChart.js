@@ -7,7 +7,7 @@ import {
     Marker
 } from "react-simple-maps";
 
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ( props ) => {
     return (
         <div data-tip="" style={{width: "80%", border:"2px solid black", display:"flex", justifyContent:"center"}}>
             <ComposableMap>

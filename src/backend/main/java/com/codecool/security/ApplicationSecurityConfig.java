@@ -44,7 +44,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(new JwtUsernamePasswordAuthenticationFilter(authenticationManager()))
                 .addFilterAfter(new JwtTokenVerifier(), JwtUsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/", "index", "/css/*", "/js/*", "/api/**").permitAll()
+                .antMatchers("/", "index", "/css/*", "/js/*", "/api/**", "/user/registration").permitAll()
                 .antMatchers("/forum/**").hasRole(ADMIN.name())
 //                .antMatchers("/api/continent/allContinents").hasRole(ADMIN.name())
 //                .antMatchers(HttpMethod.DELETE, "management/api/**").hasAuthority(COURSER_WRITE.name())

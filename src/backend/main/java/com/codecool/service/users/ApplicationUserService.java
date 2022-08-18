@@ -31,4 +31,9 @@ public class ApplicationUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.getApplicationUserByUsername(username);
     }
+
+    public void addNewRegisteredUser(ApplicationUser user){
+        //TODO user pwd encrypt
+        userRepository.save(user);
+    }
 }

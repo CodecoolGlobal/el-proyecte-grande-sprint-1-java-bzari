@@ -27,7 +27,7 @@ function Header(){
                         <NavDropdown title={<PersonCircle />} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item href="/register">
                                 Register
                             </NavDropdown.Item>
                         </NavDropdown>

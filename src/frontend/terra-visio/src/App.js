@@ -1,7 +1,7 @@
 import logo from './Resources/logo.svg';
 import './Resources/App.css';
 import {ContinentList} from "./infopages/ContinentList";
-import React, {useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {LocationList} from "./infopages/LocationList";
 import {Test} from "./Test";
@@ -10,7 +10,7 @@ import SinglePostPage from "./forum/PostPage";
 import InfoPage from "./infopages/InfoPage";
 import Topics from "./forum/ForumTopics";
 import Posts from "./forum/TopicPosts";
-import MapChart from "./MapChart";
+import MapChart from "./worldmap/MapChart";
 
 import ReactTooltip from "react-tooltip";
 

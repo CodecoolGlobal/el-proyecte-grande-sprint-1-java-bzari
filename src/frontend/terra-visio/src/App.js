@@ -9,9 +9,6 @@ import SinglePostPage from "./forum/PostPage";
 import InfoPage from "./infopages/InfoPage";
 import Topics from "./forum/ForumTopics";
 import Posts from "./forum/TopicPosts";
-import MapChart from "./worldmap/MapChart";
-
-import ReactTooltip from "react-tooltip";
 
 import Registration from "./registerAndLogin/RegisterForm";
 import LoginForm from "./registerAndLogin/LoginForm";
@@ -20,19 +17,10 @@ import {Map} from "./worldmap/Map";
 export const CoordinateContext = createContext();
 
 function App() {
-    const [content, setContent] = useState("");
-
-    const [coordinate, setCoordinate] = useState([15, 0]);
-
-
   return (
     <div className="App">
-
-        <CoordinateContext.Provider value={setCoordinate}>
-
-            <MapChart setTooltipContent={setContent} center={coordinate}/>
-            <ReactTooltip>{content}</ReactTooltip>
             <Routes>
+                <Route path="/" element={<Map/>}/>
                 <Route path="/" element={<ContinentList/>}/>
                 <Route path="/continent/:name" element={<LocationList/>}/>
                 <Route path="/location/:name" element={<InfoPage/>}/>
@@ -42,8 +30,6 @@ function App() {
                 <Route path="/register" element={<Registration/>}/>
                 <Route path="/login" element={<LoginForm/>}/>
             </Routes>
-
-        </CoordinateContext.Provider>
     </div>
   );
 }

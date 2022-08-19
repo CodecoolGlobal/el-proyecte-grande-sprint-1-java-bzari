@@ -15,6 +15,7 @@ import ReactTooltip from "react-tooltip";
 
 import Registration from "./registerAndLogin/RegisterForm";
 import LoginForm from "./registerAndLogin/LoginForm";
+import {Map} from "./worldmap/Map";
 
 export const CoordinateContext = createContext();
 

@@ -21,11 +21,7 @@ public class LocationService {
 
     public Collection<MapDTO> getLocationsByContinentName(String continentName) {
         Collection<Location> loc = locationRepository.findAllByContinentName(continentName);
-        Collection<MapDTO> mapDTOS = new ArrayList<>();
-        for (Location location : loc) {
-            mapDTOS.add(new MapDTO(location.getName(), location.getId(), location.getContinent().getId(), location.getAltitude(), location.getLongitude()));
-        }
-        return mapDTOS;
+        return getMapDTOS(loc);
     }
 
     public Optional<Location> getLocationById(Long locationId) {
@@ -36,8 +32,16 @@ public class LocationService {
         return locationRepository.findByName(locationName);
     }
 
-//    public Location getLocationByTest(String word){
-//        System.out.println(locationRepository.findLocationByNameContaining(word));
-//        return locationRepository.findLocationByNameContaining(word);
-//    }
+    public Collection<MapDTO> getAllLocations() {
+        Collection<Location> locations = locationRepository.findAll();
+        return getMapDTOS(locations);
+    }
+
+    private Collection<MapDTO> getMapDTOS(Collection<Location> loc) {
+        Collection<MapDTO> mapDTOS = new ArrayList<>();
+        for (Location location : loc) {
+            mapDTOS.add(new MapDTO(location.getName(), location.getId(), location.getContinent().getId(), location.getAltitude(), location.getLongitude()));
+        }
+        return mapDTOS;
+    }
 }

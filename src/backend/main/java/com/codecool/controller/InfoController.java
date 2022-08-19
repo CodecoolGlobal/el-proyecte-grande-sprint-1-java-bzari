@@ -55,4 +55,10 @@ public class InfoController {
     public Optional<Location> getLocation(@PathVariable String locationName){
         return locationService.getLocationByName(locationName);
     }
+
+    @GetMapping(value = "/locations")
+    @ResponseBody
+    public Collection<MapDTO> getAllLocations(){
+        return locationService.getAllLocations();
+    }
 }

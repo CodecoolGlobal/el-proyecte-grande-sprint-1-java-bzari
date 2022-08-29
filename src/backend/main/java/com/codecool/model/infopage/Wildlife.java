@@ -1,6 +1,5 @@
-package com.codecool.model.infopage.location.wildlife;
+package com.codecool.model.infopage;
 
-import com.codecool.model.infopage.location.Location;
 import lombok.*;
 
 import javax.persistence.*;

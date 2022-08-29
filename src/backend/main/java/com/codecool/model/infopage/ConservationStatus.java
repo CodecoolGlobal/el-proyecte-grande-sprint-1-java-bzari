@@ -1,4 +1,4 @@
-package com.codecool.model.infopage.location.wildlife;
+package com.codecool.model.infopage;
 
 public enum ConservationStatus {
 	EXTINCT,

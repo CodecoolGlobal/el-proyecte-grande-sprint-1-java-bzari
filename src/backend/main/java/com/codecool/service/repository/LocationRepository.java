@@ -1,6 +1,6 @@
 package com.codecool.service.repository;
 
-import com.codecool.model.infopage.location.Location;
+import com.codecool.model.infopage.Location;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

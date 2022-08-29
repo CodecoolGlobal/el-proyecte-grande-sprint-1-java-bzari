@@ -1,6 +1,6 @@
 package com.codecool.service.forum;
 
-import com.codecool.model.forum.topic.Post.Post;
+import com.codecool.model.forum.Post;
 import com.codecool.service.repository.PostRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

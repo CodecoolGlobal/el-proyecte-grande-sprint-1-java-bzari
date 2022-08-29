@@ -1,6 +1,5 @@
-package com.codecool.model.forum.topic;
+package com.codecool.model.forum;
 
-import com.codecool.model.forum.topic.Post.Post;
 import com.codecool.model.user.ApplicationUser;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

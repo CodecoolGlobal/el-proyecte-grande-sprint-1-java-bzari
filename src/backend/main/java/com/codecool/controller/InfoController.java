@@ -2,9 +2,9 @@ package com.codecool.controller;
 
 import com.codecool.model.DTO.MapDTO;
 import com.codecool.model.infopage.Continent;
-import com.codecool.model.infopage.location.Location;
-import com.codecool.service.ContinentService;
-import com.codecool.service.LocationService;
+import com.codecool.model.infopage.Location;
+import com.codecool.service.infopage.ContinentService;
+import com.codecool.service.infopage.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;

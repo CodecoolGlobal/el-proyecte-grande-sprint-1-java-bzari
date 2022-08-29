@@ -1,8 +1,8 @@
 package com.codecool.model.user;
 
-import com.codecool.model.forum.topic.Post.Post;
-import com.codecool.model.forum.topic.Post.comment.Comment;
-import com.codecool.model.forum.topic.Topic;
+import com.codecool.model.forum.Post;
+import com.codecool.model.forum.Comment;
+import com.codecool.model.forum.Topic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
-
-import static com.codecool.model.user.ApplicationUserType.ADMIN;
 
 @Entity
 @Getter

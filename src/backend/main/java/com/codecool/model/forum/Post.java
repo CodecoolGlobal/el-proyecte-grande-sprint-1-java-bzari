@@ -1,7 +1,7 @@
-package com.codecool.model.forum.topic.Post;
+package com.codecool.model.forum;
 
-import com.codecool.model.forum.topic.Topic;
-import com.codecool.model.forum.topic.Post.comment.Comment;
+import com.codecool.model.forum.Topic;
+import com.codecool.model.forum.Comment;
 import com.codecool.model.user.ApplicationUser;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

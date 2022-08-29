@@ -1,6 +1,5 @@
 package com.codecool.model.infopage;
 
-import com.codecool.model.infopage.location.Location;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 

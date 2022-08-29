@@ -1,6 +1,6 @@
 package com.codecool.service.forum;
 
-import com.codecool.model.forum.topic.Post.comment.Comment;
+import com.codecool.model.forum.Comment;
 import com.codecool.service.repository.CommentRepository;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;

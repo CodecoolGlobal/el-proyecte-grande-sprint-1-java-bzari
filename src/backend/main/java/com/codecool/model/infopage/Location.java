@@ -1,7 +1,7 @@
-package com.codecool.model.infopage.location;
+package com.codecool.model.infopage;
 
 import com.codecool.model.infopage.Continent;
-import com.codecool.model.infopage.location.wildlife.Wildlife;
+import com.codecool.model.infopage.Wildlife;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 

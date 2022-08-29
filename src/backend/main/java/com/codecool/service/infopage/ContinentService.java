@@ -1,4 +1,4 @@
-package com.codecool.service;
+package com.codecool.service.infopage;
 
 import com.codecool.model.infopage.Continent;
 import com.codecool.service.repository.ContinentRepository;

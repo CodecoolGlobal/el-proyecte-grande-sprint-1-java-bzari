@@ -31,7 +31,7 @@ const MapChart = ( props ) => {
 
     return (
         <div style={{display: "flex", justifyContent: "center"}}>
-            <div data-tip="" style={{height: "100%", width: "1100px", border:"2px solid black"}}>
+            <div data-tip="" style={{height: "100%", width: "70%", border:"2px solid black"}}>
                 <ComposableMap>
                     <ZoomableGroup center={props.center} zoom={1}>
                         <Geographies geography="/features.json">
@@ -151,7 +151,7 @@ export function toggleVisibilityOnContinentMarker(){
 function setHighlight(continentName){
     const countriesInContinent = document.getElementsByClassName(continentName.toLowerCase());
     for (let country of countriesInContinent) {
-        country.style.fill = "#194952"
+        country.style.fill = "green"
     }
 }
 

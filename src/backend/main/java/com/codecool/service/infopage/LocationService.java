@@ -1,7 +1,7 @@
-package com.codecool.service;
+package com.codecool.service.infopage;
 
 import com.codecool.model.DTO.MapDTO;
-import com.codecool.model.infopage.location.Location;
+import com.codecool.model.infopage.Location;
 import com.codecool.service.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

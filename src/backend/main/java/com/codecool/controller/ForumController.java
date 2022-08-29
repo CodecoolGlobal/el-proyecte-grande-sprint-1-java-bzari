@@ -1,8 +1,8 @@
 package com.codecool.controller;
 
-import com.codecool.model.forum.topic.Post.Post;
-import com.codecool.model.forum.topic.Post.comment.Comment;
-import com.codecool.model.forum.topic.Topic;
+import com.codecool.model.forum.Post;
+import com.codecool.model.forum.Comment;
+import com.codecool.model.forum.Topic;
 import com.codecool.service.users.ApplicationUserService;
 import com.codecool.service.forum.CommentService;
 import com.codecool.service.forum.PostService;

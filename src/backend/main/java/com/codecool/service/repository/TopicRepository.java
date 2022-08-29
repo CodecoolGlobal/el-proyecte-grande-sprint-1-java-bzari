@@ -1,6 +1,6 @@
 package com.codecool.service.repository;
 
-import com.codecool.model.forum.topic.Topic;
+import com.codecool.model.forum.Topic;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

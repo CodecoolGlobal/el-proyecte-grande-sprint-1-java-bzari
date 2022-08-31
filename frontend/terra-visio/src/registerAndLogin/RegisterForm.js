@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import {Card} from "react-bootstrap";
 
 function Registration() {
 
@@ -11,7 +12,7 @@ function Registration() {
     const [password, setPassword] = useState('');
     const [type, setType] = useState("USER"); //String vs enum
     const navigate = useNavigate();
-      
+
 
 
 
@@ -27,6 +28,7 @@ function Registration() {
     }
 
     return (
+        <Card className="register">
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -47,6 +49,7 @@ function Registration() {
                 Submit
             </Button>
         </Form>
+        </Card>
     );
 }
 

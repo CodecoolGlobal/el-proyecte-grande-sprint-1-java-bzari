@@ -13,7 +13,7 @@ function Header(){
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container>
-                <Navbar.Brand href="/" as={Logo} />
+                <Navbar.Brand as={Logo} />
             </Container>
             <Navbar.Toggle/>
             <Navbar.Collapse className="justify-content-end">

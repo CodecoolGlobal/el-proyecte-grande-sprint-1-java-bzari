@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import {Card} from "react-bootstrap";
 
 
 function LoginForm() {
@@ -26,6 +27,7 @@ function LoginForm() {
     }
 
     return (
+        <Card className="register">
         <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -42,6 +44,7 @@ function LoginForm() {
                 Login
             </Button>
         </Form>
+        </Card>
     );
 }
 

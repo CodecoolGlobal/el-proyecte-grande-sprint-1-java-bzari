@@ -1,5 +1,4 @@
 .App {
-
 }
 
 .App-logo {
@@ -45,4 +44,11 @@
 
 .related{
   margin-right: 2rem;
+}
+
+.register{
+  padding: 2%;
+  margin-top: 10%;
+  margin-left: 35%;
+  margin-right: 35%;
 }

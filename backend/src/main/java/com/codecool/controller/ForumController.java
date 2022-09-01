@@ -37,9 +37,8 @@ public class ForumController {
     }
 
     @PostMapping(value = "/new_topic")
-    public String addTopic(@RequestBody Topic topic){
+    public void addTopic(@RequestBody Topic topic){
         topicService.addNewTopic(topic);
-        return "index";
 
 //        TODO : return to topics page
     }
@@ -77,19 +76,17 @@ public class ForumController {
 
     //    TODO : edit post
     @PostMapping(value = "/{topicId}/newPost")
-    public String addPost(@RequestBody Post post, @PathVariable Long topicId){
+    public void addPost(@RequestBody Post post, @PathVariable Long topicId){
         post.setTopic(topicService.getTopicById(topicId));
         post.setUser(usersService.getUsersById(1L));
         postService.addPost(post);
-    return "index";
     }
 
     @PostMapping(value = "/{postId}/new_Comment")
-    public String addCommentToPost(@RequestBody Comment comment, @PathVariable Long postId){
+    public void addCommentToPost(@RequestBody Comment comment, @PathVariable Long postId){
         comment.setPost(postService.getPostById(postId));
         comment.setUser(usersService.getUsersById(1L));
         commentService.addComment(comment);
-        return "index";
     }
     //    TODO : edit comment
 

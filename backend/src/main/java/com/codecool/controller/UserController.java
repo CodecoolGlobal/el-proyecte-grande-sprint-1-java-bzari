@@ -23,14 +23,12 @@ public class UserController {
     }
 
     @PostMapping ("/registration")
-    public String newUserRegistration(@RequestBody ApplicationUser user) {
+    public void newUserRegistration(@RequestBody ApplicationUser user) {
         userService.addNewRegisteredUser(user);
-        return "index";
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestBody ApplicationUserDTO user){
+    public void loginUser(@RequestBody ApplicationUserDTO user){
 //        megkapja a usert akkor kellene nekünk ezt átadni valahova
-        return "index";
     }
 }

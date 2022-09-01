@@ -5,6 +5,7 @@ import React, {useEffect} from 'react';
 
 import {useState} from "react";
 import TopicButton from "./addTopicAccordion";
+import moment from "moment";
 
 function Topics(){
     const { name } = useParams();
@@ -31,7 +32,7 @@ function Topics(){
                 return <ListGroup.Item action href={`/forum/topics/${data.id}/${data.title}`}>
                     <div className="ms-2 me-auto">
                         <div className="font-weight-bold">{data.title}</div>
-                        Last updated: {data.timestamp}
+                        Last updated: {moment(data.timestamp).format('YYYY.MM.DD. HH:mm')}
                     </div>
                 </ListGroup.Item>})}
             </ListGroup>

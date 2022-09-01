@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import {useParams} from "react-router-dom";
 import React, {useEffect} from "react";
 import CommentButton from "./addCommentAccordion";
+import moment from "moment";
 
 
 function SinglePostPage() {
@@ -22,7 +23,7 @@ function SinglePostPage() {
         <Container>
         <Card className="forum">
             <Card.Title>{title}</Card.Title>
-            <Card.Text>Uploaded by: {singlePostData.user?.username} at {singlePostData.timestamp}</Card.Text>
+            <Card.Text>Uploaded by: {singlePostData.user?.username} at {moment(singlePostData.timestamp).format('YYYY.MM.DD. HH:mm')}</Card.Text>
                 <Card.Subtitle>{singlePostData.content}</Card.Subtitle>
 {/*        </Card>*/}
 {/*<Card>*/}
@@ -30,7 +31,7 @@ function SinglePostPage() {
                 {singlePostData.length===0?"No location-data accessible":singlePostData.replies?.map(data => {
                     return <ListGroup.Item>
                         <div>{data.message}</div>
-                        <div>Commented by: {data.user.username} at {data.timestamp}"</div>
+                        <div>Commented by: {data.user.username} at {moment(data.timestamp).format('YYYY.MM.DD. HH:mm')}</div>
                     </ListGroup.Item>})}
                 </ListGroup>
     <CommentButton/>

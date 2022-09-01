@@ -1,0 +1,1 @@
+docker build -t terra-visio-frontend:tv-frontend -f frontend.dockerfile .

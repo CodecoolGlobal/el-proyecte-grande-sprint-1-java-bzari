@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import React, {useEffect} from "react";
 import Button from "react-bootstrap/Button";
 import PostButton from "./addPostAccordion";
+import moment from "moment";
 
 
 function Posts(){
@@ -19,7 +20,7 @@ function Posts(){
 
     return(
         <Container>
-            <Card>
+            <Card className="forum">
                 <Row>
                     <Col>
                         <Card.Title as="h1">{title}</Card.Title>
@@ -35,7 +36,7 @@ function Posts(){
                     return <ListGroup.Item action href={`/forum/topics/posts/${data.id}/${data.title}`}>
                         <div className="ms-2 me-auto">
                             <div className="font-weight-bold">{data.title}</div>
-                            Uploaded by: {data.user.username} at {data.timestamp}
+                            Uploaded by: {data.user.username} at {moment(data.timestamp).format('YYYY.MM.DD. HH:mm')}
                         </div>
                     </ListGroup.Item>})}
 

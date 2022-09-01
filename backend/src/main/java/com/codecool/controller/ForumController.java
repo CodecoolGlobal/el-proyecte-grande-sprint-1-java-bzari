@@ -93,7 +93,6 @@ public class ForumController {
 
     @PostMapping(value = "/comments/{commentId}/upVote")
     public void upVoteComment(@PathVariable Long commentId){
-
     }
 
 }

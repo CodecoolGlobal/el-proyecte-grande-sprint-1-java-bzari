@@ -8,13 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class AuthController {
 
-    @GetMapping("login")
-    public String getLoginView(){
-        return "login";
-    }
+//    @GetMapping("login")
+//    public String getLoginView(){
+//        return "login";
+//    }
 
-    @GetMapping("courses")
-    public String getCourser(){
-        return "login"; //courses
-    }
 }

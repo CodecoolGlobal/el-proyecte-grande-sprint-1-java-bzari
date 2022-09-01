@@ -19,7 +19,7 @@ function Posts(){
 
     return(
         <Container>
-            <Card>
+            <Card className="forum">
                 <Row>
                     <Col>
                         <Card.Title as="h1">{title}</Card.Title>

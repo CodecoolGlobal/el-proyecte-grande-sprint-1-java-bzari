@@ -20,7 +20,7 @@ function Topics(){
 
     return(
         <Container>
-            <Card>
+            <Card className="forum">
                 <Row>
                     <Col>
                         <Card.Title as="h1">Forum topics</Card.Title>

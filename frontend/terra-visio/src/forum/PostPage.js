@@ -20,12 +20,12 @@ function SinglePostPage() {
 
     return(
         <Container>
-        <Card>
+        <Card className="forum">
             <Card.Title>{title}</Card.Title>
             <Card.Text>Uploaded by: {singlePostData.user?.username} at {singlePostData.timestamp}</Card.Text>
                 <Card.Subtitle>{singlePostData.content}</Card.Subtitle>
-        </Card>
-<Card>
+{/*        </Card>*/}
+{/*<Card>*/}
             <ListGroup>
                 {singlePostData.length===0?"No location-data accessible":singlePostData.replies?.map(data => {
                     return <ListGroup.Item>

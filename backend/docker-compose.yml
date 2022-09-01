@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+  backend:
+    image: terra-visio-app:terra-visio
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/aron
+      - SPRING_DATASOURCE_USERNAME=aron
+      - SPRING_DATASOURCE_PASSWORD=Sisakvirag17
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+  frontend:
+      image: terra-visio-frontend:tv-frontend
+      restart: always
+      depends_on:
+        - backend
+      ports:
+        - "3000:3000"
+
+      expose:
+        - "3000"
+
+
+  database:
+    image: terra-visio-database:terra-visio-db
+    restart: always
+    environment:
+      - POSTGRES_USER=aron
+      - POSTGRES_PASSWORD=Sisakvirag17
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

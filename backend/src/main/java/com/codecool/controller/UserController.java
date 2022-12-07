@@ -29,6 +29,5 @@ public class UserController {
 
     @PostMapping("/login")
     public void loginUser(@RequestBody ApplicationUserDTO user){
-//        megkapja a usert akkor kellene nekünk ezt átadni valahova
     }
 }

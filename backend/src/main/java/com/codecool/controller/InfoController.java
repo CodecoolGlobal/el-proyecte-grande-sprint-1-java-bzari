@@ -40,7 +40,7 @@ public class InfoController {
 
     @GetMapping(value = "/continent/{continentName}")
     @ResponseBody
-    public Collection<MapDTO> getContinentsLocations(Model model, @PathVariable String continentName){
+    public Collection<MapDTO> getContinentsLocations(@PathVariable String continentName){
         return locationService.getLocationsByContinentName(continentName);
     }
 

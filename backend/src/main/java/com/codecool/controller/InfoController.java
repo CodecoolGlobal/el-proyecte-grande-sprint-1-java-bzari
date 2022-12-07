@@ -9,17 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 @Component
-@Controller
+@RestController
 @RequestMapping("/api")
 public class InfoController {
 
@@ -33,31 +30,26 @@ public class InfoController {
     }
 
     @GetMapping(value = "/continent/allContinents")
-    @ResponseBody
     public List<Continent> getContinentsName(){
         return continentService.getAllContinent();
     }
 
     @GetMapping(value = "/continent/{continentName}")
-    @ResponseBody
     public Collection<MapDTO> getContinentsLocations(@PathVariable String continentName){
         return locationService.getLocationsByContinentName(continentName);
     }
 
     @GetMapping(value = "/location/{locationId}")
-    @ResponseBody
     public Optional<Location> getLocation(@PathVariable Long locationId){
         return locationService.getLocationById(locationId);
     }
 
     @GetMapping(value = "/continent/location/{locationName}")
-    @ResponseBody
     public Optional<Location> getLocation(@PathVariable String locationName){
         return locationService.getLocationByName(locationName);
     }
 
     @GetMapping(value = "/locations")
-    @ResponseBody
     public Collection<MapDTO> getAllLocations(){
         return locationService.getAllLocations();
     }

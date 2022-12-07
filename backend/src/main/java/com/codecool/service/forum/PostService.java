@@ -13,11 +13,14 @@ import java.util.List;
 @Service
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class PostService {
 
-    @Autowired
     private PostRepository postRepository;
+
+    @Autowired
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     public Post getPostById(Long postId){
         return postRepository.getPostById(postId);

@@ -17,9 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 public class TopicService {
 
-    @Autowired
     private TopicRepository topicRepository;
 
+    @Autowired
     public TopicService(TopicRepository topicRepository) {
         this.topicRepository = topicRepository;
     }

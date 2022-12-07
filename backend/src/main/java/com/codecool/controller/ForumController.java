@@ -15,23 +15,25 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(value = "/forum")
 @Builder
-@AllArgsConstructor
 public class ForumController {
 
-    @Autowired
     private TopicService topicService;
-    @Autowired
     private PostService postService;
-    @Autowired
     private CommentService commentService;
-    @Autowired
     private ApplicationUserService usersService;
 
+    @Autowired
+    public ForumController(TopicService topicService, PostService postService, CommentService commentService, ApplicationUserService usersService) {
+        this.topicService = topicService;
+        this.postService = postService;
+        this.commentService = commentService;
+        this.usersService = usersService;
+    }
+
     @GetMapping(value = "/topics")
-    @ResponseBody
     public List<Topic> getAllTopics(){
         return topicService.getAllTopics();
     }
@@ -48,13 +50,11 @@ public class ForumController {
 
 
     @GetMapping(value = "/topics/{topicId}/posts")
-    @ResponseBody
     public List<Post> getTopicPostsByTopicId(@PathVariable Long topicId){
         return postService.getPostsByTopicId(topicId);
     }
 
     @GetMapping(value = "/topics/{topicId}")
-    @ResponseBody
     public Topic getTopicById(@PathVariable Long topicId){
         return topicService.getTopicById(topicId);
     }
@@ -63,13 +63,11 @@ public class ForumController {
 
 
     @GetMapping(value = "posts/{postId}")
-    @ResponseBody
     public Post getPostById(@PathVariable Long postId){
         return postService.getPostById(postId);
     }
 
     @GetMapping(value = "posts/{postId}/comments")
-    @ResponseBody
     public List<Comment> getPostCommentsByPostId(@PathVariable Long postId){
         return commentService.getPostCommentsByPostId(postId);
     }
@@ -90,9 +88,5 @@ public class ForumController {
     }
     //    TODO : edit comment
 
-
-    @PostMapping(value = "/comments/{commentId}/upVote")
-    public void upVoteComment(@PathVariable Long commentId){
-    }
 
 }

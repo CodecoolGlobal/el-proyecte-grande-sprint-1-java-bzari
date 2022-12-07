@@ -10,24 +10,20 @@ import java.util.List;
 
 @Service
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class CommentService {
 
-    @Autowired
     CommentRepository commentRepository;
 
-    public Comment getCommentById(Long commentId){
-        return commentRepository.getCommentById(commentId);
+    @Autowired
+    public CommentService(CommentRepository commentRepository) {
+        this.commentRepository = commentRepository;
     }
 
     public void addComment(Comment comment){commentRepository.save(comment);}
 
-    public void upVoteComment(Long commentId){
-        commentRepository.getCommentById(commentId).getUpvote();
-    }
     public List<Comment> getPostCommentsByPostId(Long postId){
         return commentRepository.getCommentsByPostId(postId);
     }
